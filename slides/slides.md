@@ -1,5 +1,8 @@
 ---
 theme: default
+colorSchema: dark
+themeConfig:
+  primary: "#f28c28"
 title: Agentic Development Workflow
 info: IT nap 2026-11-07
 class: text-center

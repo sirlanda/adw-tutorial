@@ -1,3 +1,96 @@
+/* Tigra sötét háttér (public/hatter_tartalom_sotet.png): sötétkék #05224a alap,
+   kék hullámok jobbra fent és alul, narancs pöttyök. A paletta ehhez igazodik. */
+:root {
+  --tigra-navy: #05224a;
+  --tigra-navy-deep: rgba(2, 18, 42, 0.78);
+  --tigra-orange: #f28c28;
+  --tigra-blue: #6fb3e8;
+  --tigra-text: #e8eef7;
+  --tigra-muted: #a9b9d1;
+}
+
+.slidev-layout {
+  background-color: var(--tigra-navy);
+  background-image: url("/hatter_tartalom_sotet.png");
+  background-size: cover;
+  background-position: center;
+  color: var(--tigra-text);
+}
+
+.slidev-layout h1,
+.slidev-layout h2,
+.slidev-layout h3 {
+  color: #ffffff;
+}
+
+.slidev-layout h1 {
+  border-bottom: 2px solid var(--tigra-orange);
+  padding-bottom: 0.25rem;
+  display: inline-block;
+}
+
+.slidev-layout.text-center h1,
+.slidev-layout[class*="center"] h1 {
+  border-bottom: none;
+}
+
+.slidev-layout p,
+.slidev-layout li {
+  color: var(--tigra-text);
+}
+
+.slidev-layout strong {
+  color: var(--tigra-orange);
+}
+
+.slidev-layout li::marker {
+  color: var(--tigra-orange);
+}
+
+.slidev-layout a {
+  color: var(--tigra-blue);
+}
+
+/* Kód és promptok: félig áttetsző mélykék, hogy a hullámok fölött is olvasható maradjon */
+.slidev-layout pre,
+.slidev-layout .slidev-code,
+.slidev-layout pre.shiki {
+  background-color: var(--tigra-navy-deep) !important;
+  border: 1px solid rgba(111, 179, 232, 0.35);
+  color: var(--tigra-text) !important;
+}
+
+.slidev-layout :not(pre) > code {
+  background-color: rgba(111, 179, 232, 0.18);
+  color: #ffffff;
+}
+
+/* Táblázat */
+.slidev-layout table {
+  color: var(--tigra-text);
+}
+.slidev-layout th {
+  color: var(--tigra-blue);
+  border-bottom: 1px solid rgba(111, 179, 232, 0.45);
+}
+.slidev-layout td {
+  border-bottom: 1px solid rgba(111, 179, 232, 0.2);
+}
+
+/* Kiemelő dobozok */
+.tigra-note {
+  background-color: var(--tigra-navy-deep);
+  border-left: 4px solid var(--tigra-orange);
+  color: var(--tigra-text);
+}
+
+/* Halvány kísérőszövegek: elég kontraszt a sötét háttéren */
+.slidev-layout .opacity-70,
+.slidev-layout .opacity-80 {
+  opacity: 1;
+  color: var(--tigra-muted);
+}
+
 /* Sűrű kódos diák: kisebb kódbetű, szorosabb táblázat. */
 .slidev-layout {
   --slidev-code-font-size: 0.64rem;
@@ -9,3 +102,13 @@
 .slidev-layout th, .slidev-layout td { padding: 0.15rem 0.5rem; }
 .slidev-layout h1 { margin-bottom: 0.6rem; }
 .slidev-layout td:first-child { white-space: nowrap; }
+
+/* Kiemelt kódblokk: a nem kiemelt sorok a sötét háttéren is maradjanak olvashatók */
+.slidev-layout .slidev-code .slidev-code-dishonored { opacity: 0.55; }
+
+/* Hosszú cím a jobb felső hullám fölött: kisebb betű, sötét derengés a betűk mögött */
+.slidev-layout:not(.cover):not(.section):not([class*="center"]) h1 {
+  font-size: 2rem;
+  line-height: 1.2;
+  text-shadow: 0 0 14px var(--tigra-navy), 0 0 6px var(--tigra-navy), 0 0 2px var(--tigra-navy);
+}
