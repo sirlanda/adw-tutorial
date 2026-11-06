@@ -29,6 +29,9 @@ Nyolc lépés egy működő ADW-ig
 <!--
 1. Az ADW lényege, hogy nem a terméket gyártjuk, hanem a terméket gyártó gyártósort építjük meg.
 2. Gyár-gyártó - Úgy hangzik, mint Jar Jar Binks - és pont annyi ész is kell hozzá...
+3. Eredetileg workshop-ot szerettem volna tartani, de mivel csak 1 óra jutott így ez most nem fér bele.
+4. De azért ne csüggedjetek, mert az előadáshoz tartozó forráskód elérhető lesz github-ról, és bárki kipróbálhatja.
+5. Az AI használatra is igaz, hogy nem elég csak YT videókat nézni, véleményeket hallgatni és vitatkozni: ki kell próbálni a dolgokat!
 -->
 
 ---
@@ -46,6 +49,17 @@ ha nem tudod, hogy mi a mögöttes gondolat?
 <br>
 
 Vibe coding csak olyan helyeken működik, ahol nem fontos a konzisztens működés.
+
+<!--
+1. Mielőtt azonban nekifogunk a munkának, derítsük ki, hogy van-e egyáltalán értelme!
+2. Sokan azt tartják, hogy az AI nem csak kódolóként, de probléma-megoldóként is le fog körözni bennünket.
+Na ebben az esetben tömindegy, hogy mit csinálunk, úgyhogy akár ezzel is foglalkozhatunk.
+3. Ha viszont nem - és én ezt gondolom - akkor nagyon fontos, hogy ki vezet kit: ő minket, vagy mi őt?
+4. Nem kérdés, hogy kódolni már csak gyakorlás/tanulás miatt érdemes. Gyártani a nyelvi modellek gyorsabban gyártanak.
+5. De annak sincs értelme, hogy egy "statisztikai alapon tokeneket generáló automatával" vitatkozzunk.
+
+Akkor minek van?
+-->
 
 ---
 
@@ -71,6 +85,16 @@ Vibe coding csak olyan helyeken működik, ahol nem fontos a konzisztens működ
 </div>
 </div>
 
+<!--
+Kroky mondta, hogy az a legidegesítőbb az AI-jal írt kódban, hogy marha bonyolult egy-egy commit, és neház átlátni, hogy mi miért módosult.
+
+Ha neked kell lekövetned az AI "észjárását", akkor nagy bajban vagy, mert neki nincs ilyen. Talál egy mintát valahol és beilleszti. Aztán egy másik problémánál egy másikat, és így tovább. Még azt is kéred, hogy magyarázza el, hogy miért tette: a végén a projektet tele lesz jobbnál jobb koncepciókkal és a komplexitása az egekben lesz.
+
+Arra kell rávenned az AI-t hogy helyetted dolgozzon, a nevedben, pont úgy, ahogy te tennéd. (Csak nem tiktokozik közben...)
+
+Ha ez sikerül, akkor nem kell magyarázni semmit, hiszen pont azt teszi, amit te is tennél. Csak gyorsabban. Csak egyszerre több feladaton. És folyamatosan.
+-->
+
 ---
 
 # Akkor tehát most teljesen kiadjuk magunkat?
@@ -83,11 +107,19 @@ Vibe coding csak olyan helyeken működik, ahol nem fontos a konzisztens működ
 
 <v-click>
 
-**Az ügynök alkot, a TypeScript dönt.**
+**Az ügynök alkot, a kód dönt.**
 
 Ez az egy mondat a következő nyolc lépés.
 
 </v-click>
+
+<!--
+Na igen, de akkor ez most azt jelenti, hogy dokumentálom, hogy hogyan működök?
+Miért lesz rám ezután szükség?
+- Egyrészt a fejlesztőknél ez eddig sem volt probléma...
+- Másrészt sohasem az volt a menő, aki sokat tud, hanem aki alázattal, másokat segítve dolgozik
+- Végsősoron pedig az számít, hogy hasznosan töltjük-e az időnket
+-->
 
 ---
 layout: section
@@ -96,6 +128,11 @@ layout: section
 # A feladat
 
 Napsugár Kertészet, ügyfélszolgálat
+
+<!--
+Nem akartam egy nagyon csiricsáré feladatot kiatlálni, mert akkor azzal megy el az idő, hogy a bizniszt magyarázom. 
+Mindenki dolgozott már ügyfélszolgálati munkatársként kertészeti vállalatnál, úgyhogy erre nem is kell szót vesztegetni...
+-->
 
 ---
 
@@ -134,6 +171,11 @@ Az ügynök csak a `kb/`-t és a saját input fájlját olvassa.
 
 </div>
 </div>
+
+<!--
+A feladat az lesz, hogy a beömlő email-es megkereséseket a megfelelő módon kezeljük.
+A tudásbázisunk tartalmazza azokat a szabályokat, ami alapján a level-1 support munkatárs is dolgozna. Kérdés, hogy ezt a gép is meg tudja-e csinálni?
+-->
 
 ---
 
@@ -175,6 +217,18 @@ flowchart LR
 
 Minden lépés egy branch, minden branch az előzőre épül. Az LLM a 4. lépésben jelenik meg.
 
+<!--
+1. Építsük fel a munkafolyamatot, amit egy ember is tenne!
+2. Keressük meg és automatizáljuk a determinisztikus lépéseket!
+3. Vonjuk be az AI-t, ahol intelligens döntéseket kell hozni, vagy dinamikusan kell szöveget generálni!
+4. Mérjük a feldolgozás minőségét - és rendeljük emberhez a nem-eldönthető állapotokat!
+5. A feldolgozó nem kap végtelen lehetőséget, elkapjuk a végtelennek tűnő ciklust.
+6. Amint lehet, kimaradunk a közvetlen munkából - és csak a riasztásokat kezeljük.
+7. Ha már nagyon okos a rendszer, akkor hagyjuk hogy mindent egyedül intézzen.
+
+Technikailag a 8 lépést a git repo branch-eiben találjátok.
+-->
+
 ---
 layout: section
 ---
@@ -182,6 +236,10 @@ layout: section
 # 1. Gráf és ciklus
 
 `01-workflow`
+
+<!--
+Az első lépés, hogy a munkafolyamatot modellezzük.
+-->
 
 ---
 
@@ -238,6 +296,16 @@ A folytatás a `draft`-nál indul, mert a fájl tudja, hol tart.
 </div>
 </div>
 
+<!--
+Nem fogjuk soronként megnézni a kódot, csak a releváns részeket emelem ki.
+Itt a lényeg az infrastruktúra: maga a szállítószalag.
+Vannak a tevékenységi pontok (node-ok), és a szalag egyik helyről a másikra viszi a munkadarabot, hogy az adott ponton a megfelelő transzformációt elvégezzék rajta.
+1. A `node`-ok nem vezérelnek, csak javasolnak.
+2. Az infra szabványosítja a be- és kimenő adatok forgalmazását
+3. Emellett pedig a munkafolyamatok átláthatóságát is biztosítja (vagyis naplóz!).
+4. És nagyon fontos, hogy a folyamatok nem *"szállnak keringnek a magosba..."*, hanem egy fizikai fájlban rögzített állapotot olvasnak és írnak. Így egy megszakadt feldolgozás bármikor újraindítható.
+-->
+
 ---
 layout: section
 ---
@@ -245,6 +313,12 @@ layout: section
 # 2. Nyílt, típusos kommunikáció
 
 `02-typed-io`
+
+<!--
+Ki ne tudná, hogy a kommunikáció milyen fontos!
+
+Üvegzseb és átláthatóság - vagy jön a hatóság!
+-->
 
 ---
 
@@ -313,6 +387,13 @@ abstract class ExecNode<S, In, Out> extends Node<S> {
 </div>
 </div>
 
+<!--
+Nem csak minket zavar a wall-of-text, de a gép is sokkal könnyebben eligazodik egy struktúrált adatszerkezetben.
+Így aztán arra sincs lehetősége majd az AI node-nak, hogy valami egészen forradalmi újdonságot büfögjön oda nekünk, amin a rendszer majd eltaknyol.
+1. a `run` metódus a málhás szamár, ami a munkát végzi
+2. az `apply` a menedzser, aki dokumentálja az eredményeket
+-->
+
 ---
 layout: section
 ---
@@ -320,6 +401,12 @@ layout: section
 # 3. Determinisztikus node-ok
 
 `03-exec-node`
+
+<!--
+Eddig is sokszor írtunk volna automatát a feladataink egy részére, de túlságosan költséges volt megírni és karbantartani.
+Most lett egy *barátunk*, aki ezt elvégzi helyettünk.
+Az egyszerű kód írása és karbantartása hihetetlenül olcsó lett.
+-->
 
 ---
 
@@ -379,6 +466,16 @@ A sablon vázlat a kapun:
 </div>
 </div>
 
+<!--
+Az itt látható osztály a levél ellenőrzését végzi determinisztikus módon. Van egy csomó egyszerű (pl. regexp) szabály, amit egymás után ellenőrizve megmondja, hogy mi a baj a válaszlevél tartalmával. Ehhez nem kell diploma, és nem feltétlenül jó az AI sem, hiszen mit sem érünk azzal, ha bocsánatot kér, hogy tévedett.
+
+1. tiltott szavak listája
+2. rendelés szám szabványos előfordulása
+3. vagy a megszólítás elvárt formája
+
+mind egyszerűen leképezhető...
+-->
+
 ---
 layout: section
 ---
@@ -386,6 +483,12 @@ layout: section
 # 4. Az ügynök belép
 
 `04-agent-node`
+
+<!--
+Na de ki fogja végre a levelet megírni?
+
+Mert én biztosan nem!
+-->
 
 ---
 
@@ -447,6 +550,19 @@ export class Writer extends AgentNode<ReplyState, In, Out> {
 </div>
 </div>
 
+<!--
+És itt jön a varázslat, amiben nincs semmi trükk!
+
+1. Hogy tényleg ne legyen trükk, ezért az agent mindig 0-ról indul. Nincs előzmény, memória, mcp szerver hegyek, szabad hozzáférés az internethez.
+Fájlt olvasunk és fájlba írunk. Slussz!
+2. A bemenet és a kimenet szabványos JSON
+3. A kapott prompt fixen előre megírva.
+
+Aki emlékszik, hogy volt egy cikk a tudástáron arról, hogy hogyan érdemes promptolni: ne itt azt érdemes elolvasni!
+
+Ez a prompt ugyanis rengetegszer fog futni: ha hatékony, akkor mindig az lesz, ha költséges, akkor mindig az lesz.
+-->
+
 ---
 
 # Mit látott az ügynök, mit csinált
@@ -497,6 +613,14 @@ A demo determinisztikus, az élő hívás a tartalék.
 
 </div>
 </div>
+
+<!--
+A logokból jól látszik, hogy mit csinált az agent.
+
+Még az is látszik, hogy mennyit költött.
+
+És az eredmények tárolása nekem lehetőséget ad arra, hogy tényleges agent hívás helyett, csak a `ReplayAgent`-et hívva `claude` nélkül is tudjak bemutatózni...
+-->
 
 ---
 layout: section
