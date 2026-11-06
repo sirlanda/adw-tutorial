@@ -630,6 +630,10 @@ layout: section
 
 `05-loop-limits`
 
+<!--
+Már láttuk, hogy az ügynökünk munkáját egy statikus `Checker` is ellenőrzi. Vajon mi történik, ha nem elégedett, de az ügynök nem hajlandó kijavítani a hibát?
+-->
+
 ---
 
 # Az ügynök javít, a kód számol
@@ -709,6 +713,16 @@ T-1003/02:  ADW_MAX_FIX=0 → guard → max_reached → escalate
 </div>
 </div>
 
+<!--
+A levél megírása után a statikus elemzés kihozhat hibákat és akkor a folyamatunk új irányt vehet: `fixer` node-ba megyünk
+
+Nincs annál szebb és jobb, mint amikor egy ügynök elszabadul, és úgy szórja a pénzt, mintha nem lenne holnap. Erről szól az összes James Bond film.
+
+A mi kis pajkos ügynökünk, azonban kordában tartható több eszközzel is: 
+1. hiába nem akar elvégezni egy feladatot, az x. próbálkozásra a folyamat `elakadt` állapottal megáll
+2. egy-egy futása pedig időben is korlátozva van - vagyis hiába kezdi el feltörni a HuggingFace-t, mert 5 perc után leállítjuk
+-->
+
 ---
 layout: section
 ---
@@ -716,6 +730,12 @@ layout: section
 # 6. Triage
 
 `06-triage` · kód, Jev, olcsó LLM
+
+<!--
+Amikor ellenőrzéseket csinálunk, akkor nem csupán egy eszköz áll rendelkezésünkre.
+
+Nézzük meg, hogyan lehet egyre rafináltabb módon felmérni a továbblépési lehetőségeket!
+-->
 
 ---
 
@@ -775,6 +795,18 @@ support_level: choice("Ki oldja meg?", { L1, L2, L3 }),
 </div>
 </div>
 
+<!--
+Statikus/determinisztikus ellenőrzésre láttunk már példát, mert a `Checker` pont azt vizsgálta, hogy a válaszlevél formailag és bizonyos tartalmi elemek tekintetében megfelelő.
+
+Ezek a legolcsóbb ellenőrzések.
+
+És mind utálunk várni `claude`-ra, amíg egy egyszerű kérdésünkre fontolgatja a választ. De nem is kell, mert itt a `Jev`. Ez nem egy generátor modell, hanem egy encoder modell. Sokan ezzel a skatulyával le is írják az eszközt, de a lényeg az, hogy piszok gyorsan, nagy megbízhatósággal képes intelligens döntéseket meghozni: választ, pontoz vagy igen/nem döntést hoz. Ezek mellé közli, hogy milyen megbízhatóságúnak tartja a saját véleményét.
+
+Nagyon hasznos eszköz tud lenni, ami több szinten is használható. Itt pl.
+
+És a táblázatból látjuk, hogy a különböző levelek esetében más és más infrastruktúra elem tud döntést hozni, a probléma komplexitásának megfelelően.
+-->
+
 ---
 
 # A modell a feladathoz
@@ -801,6 +833,18 @@ support_level: choice("Ki oldja meg?", { L1, L2, L3 }),
 - A hat levélből kettő nem is jut el a drága modellig, egy pedig ügynök nélkül megy ki.
 - A modell a prompt fájl frontmatterében (`model: haiku | sonnet | opus`), nem a kódban.
 
+<!--
+De nem csak a döntések esetén fontos, hogy mérlegeljük a feladat komplexitását.
+
+Nyilván, ha elég időt adunk egy Astra Agent Swarm-nak, akkor bármit feltörnek, de iszanyatosan sok pénzünkbe fog ez kerülni.
+
+Persze szerencsére idő és pénz az pont van mindenkinek rengeteg...
+
+A táblázatból láthatjuk, hogy megfelelő model kiválasztásával gyorsabban és olcsóbban tudjuk megoldani ugyanazt a feladatot.
+
+Ebben a projektben a modellválasztás a promptban történik (az egyszerűség kedvéért. A teszteléshez használt rendszerünkben azonban konfigurációs állományból választható ki, hogy melyik ügynök (claude, codex, opencode, pi), melyik modell (Naomi Campbell, Gisele Bündchen, Kendall Jenner), milyen erőfeszitéssel dolgozzon.
+-->
+
 ---
 layout: section
 ---
@@ -808,6 +852,10 @@ layout: section
 # 7. Near the loop
 
 `07-near-the-loop` · kidolgoz, aztán kérdez
+
+<!--
+Érezzük azonban, hogy mindig lesz egy olyan pont, amikor a modellek nem megbízható módon működnek, és a leeső feladatot valakinek el kell kapni.
+-->
 
 ---
 
@@ -887,6 +935,14 @@ reports/
 
 </div>
 </div>
+
+<!--
+Az nem kérdés, hogy ki fogja elkapni a feladatot, de az igen, hogy **mikor** kapom meg a feladatot.
+
+Ha az ember naphosszat a gép előtt ül és azt várja, hogy az ügynök dolgozzon, az az időnknek a nem hatékony kihasználása.
+
+Akkor leszünk hatékonyak *(hogyha iszunk jó sok konyak)*, ha az agent előkészíti számunkra a döntést. Rendezett formában megkapunk minden inputot (ő is ezt várta), és akkora kontextust, ami befogadható. A megoldást is elő tudja készíteni, így a választás pillanatában nem *gondolkodni kezd*, hanem azonnal *munkához lát*.
+-->
 
 ---
 layout: section
