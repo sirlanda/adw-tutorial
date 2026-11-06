@@ -185,7 +185,7 @@ sync:
     cur=$(git branch --show-current)
     prev=main
     for b in $(git branch --list --format '%(refname:short)' '0?-*' | sort); do
-      git rebase -q "$prev" "$b" >/dev/null
+      git -c advice.skippedCherryPicks=false rebase -q "$prev" "$b" >/dev/null
       echo "$b <- $prev ($(git log --oneline "$prev..$b" | wc -l) commit)"
       prev=$b
     done
