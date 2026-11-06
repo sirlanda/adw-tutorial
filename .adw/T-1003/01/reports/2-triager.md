@@ -7,7 +7,7 @@ duration_s: 0.2
 
 ## Elvégezve
 
-- Jev: L1 (0.96), hangnem angry, sürgősség 1.3, súly 1.1
+- Jev: L1 (0.94), hangnem angry, sürgősség 1.4, súly 1.1
 - az ügynök ír, a triage priorként az inputjában
 
 ## Problémák

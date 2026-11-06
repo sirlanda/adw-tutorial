@@ -10,6 +10,7 @@ import { Send } from "./nodes/Send";
 import { Summarizer } from "./nodes/Summarizer";
 import { Triager } from "./nodes/Triager";
 import { Writer } from "./nodes/Writer";
+import { autoSend } from "./policy";
 import type { Limits, ReplyContext } from "./ReplyContext";
 import type { ReplyState } from "./state";
 
@@ -29,8 +30,9 @@ export function replyWorkflow(ctx: ReplyContext): WorkflowDef<ReplyState> {
     { label: "zöld", when: (s) => s.check?.green === true, to: "gate" },
     { label: "piros", when: (s) => s.check?.green === false, to: "fix" },
   ]);
-  // Near the loop: a döntés az emberé, a csatorna ugyanaz a state, mint a node-ok között.
+  // Off the loop: az alacsony kockázatú válasz kódban eldöntve megy ki; a többi az emberé.
   const gate = new DecisionNode<ReplyState>("gate", [
+    { label: "automatikus", when: autoSend, to: "send" },
     { label: "jóváhagyva", when: (s) => s.approval?.decision === "approved", to: "send" },
     { label: "elutasítva", when: (s) => s.approval?.decision === "rejected", to: "fix" },
     { label: "döntésre vár", when: () => true, to: "propose" },

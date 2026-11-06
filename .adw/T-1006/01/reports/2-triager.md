@@ -7,7 +7,7 @@ duration_s: 0.2
 
 ## Elvégezve
 
-- Jev: L2 (0.28), hangnem friendly, sürgősség 0.8, súly 2.0
+- Jev: L2 (0.30), hangnem friendly, sürgősség 0.8, súly 2.0
 - az ügynök ír, a triage priorként az inputjában
 
 ## Problémák

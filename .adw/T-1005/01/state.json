@@ -1,8 +1,8 @@
 {
   "ticket_id": "T-1005",
   "execution_id": "01",
-  "created_at": "2026-11-06T05:55:40.330Z",
-  "updated_at": "2026-11-06T05:55:48.097Z",
+  "created_at": "2026-11-06T05:58:59.081Z",
+  "updated_at": "2026-11-06T05:59:06.072Z",
   "status": "clean",
   "next": "end",
   "iteration": 0,
@@ -24,15 +24,15 @@
   "triage": {
     "route": "escalate",
     "jev": {
-      "importance": 0.64,
+      "importance": 0.66,
       "urgency": 0.46,
       "deadline": "none",
       "tone": "friendly",
       "complexity": 1.31,
       "support_level": "L2",
-      "support_level_confidence": 0.64
+      "support_level_confidence": 0.61
     }
   },
-  "summary": "Horváth László (T-1005) egy sövénynyíró ollót (NK-240288) vett 20 napja, de ajándékba kapott egy másikat, így a vásárolt, bontatlan, eredeti dobozos példányt visszaküldené. Tudja, hogy az elállási határidő 14 nap, és ezt el is ismeri.\nKérdés a másik csapatnak (üzleti döntés): van-e mód a 14 napos határidőn túli visszaküldésre bontatlan termék esetén, és ha igen, milyen feltételekkel?\nAz ügyfél barátságos hangnemben ír, a levélben nincs határidő (L2, üzleti döntés).",
-  "handover": "Ügy: T-1005, futás: 01, státusz: running. Szint: L2. Összefoglaló: Horváth László (T-1005) egy sövénynyíró ollót (NK-240288) vett 20 napja, de ajándékba kapott egy másikat, így a vásárolt, bontatlan, eredeti dobozos példányt visszaküldené. Tudja, hogy az elállási határidő 14 nap, és ezt el is ismeri.\nKérdés a másik csapatnak (üzleti döntés): van-e mód a 14 napos határidőn túli visszaküldésre bontatlan termék esetén, és ha igen, milyen feltételekkel?\nAz ügyfél barátságos hangnemben ír, a levélben nincs határidő (L2, üzleti döntés). Vázlat nem készült."
+  "summary": "Horváth László (T-1005) egy sövénynyíró ollót (NK-240288) vett 20 napja, de ajándékot kapott helyette, ezért fölöslegessé vált; az áru bontatlan, az eredeti dobozban van.\nTudja, hogy a 14 napos elállási határidő lejárt, és azt kérdezi, van-e mód a visszaküldésre ilyen esetben.\nKérdés a másik csapatnak (üzleti döntés): elfogadható-e a visszaküldés a 14 napos határidő után, bontatlan, eredeti csomagolású, ajándék miatt fölöslegessé vált terméknél (NK-240288)?",
+  "handover": "Ügy: T-1005, futás: 01, státusz: running. Szint: L2. Összefoglaló: Horváth László (T-1005) egy sövénynyíró ollót (NK-240288) vett 20 napja, de ajándékot kapott helyette, ezért fölöslegessé vált; az áru bontatlan, az eredeti dobozban van.\nTudja, hogy a 14 napos elállási határidő lejárt, és azt kérdezi, van-e mód a visszaküldésre ilyen esetben.\nKérdés a másik csapatnak (üzleti döntés): elfogadható-e a visszaküldés a 14 napos határidő után, bontatlan, eredeti csomagolású, ajándék miatt fölöslegessé vált terméknél (NK-240288)? Vázlat nem készült."
 }

@@ -1,19 +1,19 @@
 {
   "status": "ok",
   "done": [
-    "Jev: L1 (0.96), hangnem angry, sürgősség 1.3, súly 1.1",
+    "Jev: L1 (0.94), hangnem angry, sürgősség 1.4, súly 1.1",
     "az ügynök ír, a triage priorként az inputjában"
   ],
   "problems": [],
   "route": "write",
   "template": null,
   "triage": {
-    "importance": 1.06,
-    "urgency": 1.34,
+    "importance": 1.08,
+    "urgency": 1.35,
     "deadline": "today",
     "tone": "angry",
     "complexity": 1.38,
     "support_level": "L1",
-    "support_level_confidence": 0.96
+    "support_level_confidence": 0.94
   }
 }

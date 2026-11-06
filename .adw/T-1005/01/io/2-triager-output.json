@@ -1,19 +1,19 @@
 {
   "status": "ok",
   "done": [
-    "Jev: L2 (0.64), hangnem friendly, sürgősség 0.5, súly 0.6",
+    "Jev: L2 (0.61), hangnem friendly, sürgősség 0.5, súly 0.7",
     "emberhez megy, ügynök nem ír választ"
   ],
   "problems": [],
   "route": "escalate",
   "template": null,
   "triage": {
-    "importance": 0.64,
+    "importance": 0.66,
     "urgency": 0.46,
     "deadline": "none",
     "tone": "friendly",
     "complexity": 1.31,
     "support_level": "L2",
-    "support_level_confidence": 0.64
+    "support_level_confidence": 0.61
   }
 }

@@ -4,5 +4,5 @@
     "átadva: üzemeltetés/fejlesztés"
   ],
   "problems": [],
-  "handover": "Ügy: T-1004, futás: 01, státusz: running. Szint: L3. Összefoglaló: Tóth Eszter (2026-11-05) jelzi, hogy a webshopban a Kosárba gomb iPhone-on, Safari böngészőben nem csinál semmit; többszöri próbálkozásra, kijelentkezve és bejelentkezve is ugyanez tapasztalható.\nChrome-ban a saját gépén a gomb működik, más eszközt vagy böngészőt nem említ; rendelésszámot és terméket nem adott meg, és azt kéri, hogy hátha más is jelezze a hibát.\nKérdés a fejlesztő csapatnak: reprodukálható-e a Kosárba gomb hibája iOS Safarin, mi okozza, és van-e más iOS Safari-s érintett felhasználó? Vázlat nem készült."
+  "handover": "Ügy: T-1004, futás: 01, státusz: running. Szint: L3. Összefoglaló: Tóth Eszter (toth.eszter@example.com) arról panaszkodik, hogy a webshopban a Kosárba gomb iPhone-on Safariban nem csinál semmit, kijelentkezve és bejelentkezve is, többszöri próbálkozásra. Chrome-ban a saját gépén működik, és azt írja, más is tapasztalhatja.\nKonkrét adat: nincs rendelésszám és termékazonosító a levélben; az eszköz iPhone, böngésző Safari, dátum 2026-11-05 11:30.\nKérdés a technikai csapatnak: reprodukálható-e a Safari/iPhone-os kosárhiba, és van-e ismert probléma a kosárgombbal ezen a böngészőn? Vázlat nem készült."
 }

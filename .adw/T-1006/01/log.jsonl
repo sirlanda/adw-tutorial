@@ -1,40 +1,20 @@
-{"at":"2026-11-06T05:55:48.168Z","event":"node_start","node":"fetcher","seq":1}
-{"at":"2026-11-06T05:55:48.169Z","event":"node_end","node":"fetcher","status":"ok"}
-{"at":"2026-11-06T05:55:48.169Z","event":"step","node":"fetch","outcome":{"kind":"next","to":"triage"}}
-{"at":"2026-11-06T05:55:48.169Z","event":"node_start","node":"triager","seq":2}
-{"at":"2026-11-06T05:55:48.372Z","event":"jev","name":"triage","model":"jev-1.14.0","questions":6,"input_tokens":1066,"duration_ms":202,"answers":{"importance":{"type":"score","score":1.99,"confidence":0.98,"legend":{"0":"kicsi: egy vásárló egyszerű kérdése","1":"közepes: reklamáció, pénz vagy csere forog kockán","2":"nagy: nagy összeg, céges ügyfél, jogi vagy hírnév-kockázat"},"probabilities":{"0":0,"1":0.01,"2":0.99}},"urgency":{"type":"score","score":0.85,"confidence":0.72,"legend":{"0":"nem sürgős","1":"napokon belül kell","2":"még ma kell"},"probabilities":{"0":0.17,"1":0.81,"2":0.02}},"deadline":{"type":"choice","choice":"date_in_mail","confidence":1,"probabilities":{"none":0,"today":0,"this_week":0,"date_in_mail":1}},"tone":{"type":"choice","choice":"friendly","confidence":0.31,"probabilities":{"angry":0,"neutral":0.46,"friendly":0.54}},"complexity":{"type":"score","score":1.41,"confidence":0.32,"legend":{"0":"egy sablonmondat elég","1":"a tudásbázisból összeállítható","2":"egyedi mérlegelés vagy több fél kell hozzá"},"probabilities":{"0":0.02,"1":0.55,"2":0.43}},"support_level":{"type":"choice","choice":"L2","confidence":0.28,"probabilities":{"L1":0.48,"L2":0.52,"L3":0}}}}
-{"at":"2026-11-06T05:55:48.373Z","event":"node_end","node":"triager","status":"ok"}
-{"at":"2026-11-06T05:55:48.373Z","event":"step","node":"triage","outcome":{"kind":"next","to":"after_triage"}}
-{"at":"2026-11-06T05:55:48.373Z","event":"step","node":"after_triage","outcome":{"kind":"next","to":"write"}}
-{"at":"2026-11-06T05:55:48.374Z","event":"node_start","node":"writer","seq":3}
-{"at":"2026-11-06T05:56:07.221Z","event":"agent","node":"writer","attempt":1,"agent":"claude","ok":true,"cost_usd":0.1636418}
-{"at":"2026-11-06T05:56:07.223Z","event":"node_end","node":"writer","status":"issues"}
-{"at":"2026-11-06T05:56:07.223Z","event":"step","node":"write","outcome":{"kind":"next","to":"check"}}
-{"at":"2026-11-06T05:56:07.223Z","event":"node_start","node":"checker","seq":4}
-{"at":"2026-11-06T05:56:07.225Z","event":"node_end","node":"checker","status":"ok"}
-{"at":"2026-11-06T05:56:07.226Z","event":"step","node":"check","outcome":{"kind":"next","to":"after_check"}}
-{"at":"2026-11-06T05:56:07.226Z","event":"step","node":"after_check","outcome":{"kind":"next","to":"gate"}}
-{"at":"2026-11-06T05:56:07.226Z","event":"step","node":"gate","outcome":{"kind":"next","to":"propose"}}
-{"at":"2026-11-06T05:56:07.226Z","event":"node_start","node":"propose","seq":5}
-{"at":"2026-11-06T05:56:07.228Z","event":"node_end","node":"propose","status":"ok"}
-{"at":"2026-11-06T05:56:07.228Z","event":"step","node":"propose","outcome":{"kind":"waiting","at":"gate","reason":"emberi jóváhagyásra vár"}}
-{"at":"2026-11-06T05:56:07.302Z","event":"approval","decision":"rejected","note":"Kérj szállítási címet és céges adószámot, és jelezd, hogy a kolléga 2 munkanapon belül hívja."}
-{"at":"2026-11-06T05:56:07.302Z","event":"step","node":"gate","outcome":{"kind":"next","to":"fix"}}
-{"at":"2026-11-06T05:56:07.302Z","event":"node_start","node":"fixer","seq":6}
-{"at":"2026-11-06T05:56:34.554Z","event":"agent","node":"fixer","attempt":1,"agent":"claude","ok":true,"cost_usd":0.1900772}
-{"at":"2026-11-06T05:56:34.555Z","event":"node_end","node":"fixer","status":"ok"}
-{"at":"2026-11-06T05:56:34.555Z","event":"step","node":"fix","outcome":{"kind":"next","to":"check"}}
-{"at":"2026-11-06T05:56:34.555Z","event":"node_start","node":"checker","seq":7}
-{"at":"2026-11-06T05:56:34.556Z","event":"node_end","node":"checker","status":"ok"}
-{"at":"2026-11-06T05:56:34.556Z","event":"step","node":"check","outcome":{"kind":"next","to":"after_check"}}
-{"at":"2026-11-06T05:56:34.556Z","event":"step","node":"after_check","outcome":{"kind":"next","to":"gate"}}
-{"at":"2026-11-06T05:56:34.556Z","event":"step","node":"gate","outcome":{"kind":"next","to":"propose"}}
-{"at":"2026-11-06T05:56:34.556Z","event":"node_start","node":"propose","seq":8}
-{"at":"2026-11-06T05:56:34.556Z","event":"node_end","node":"propose","status":"ok"}
-{"at":"2026-11-06T05:56:34.556Z","event":"step","node":"propose","outcome":{"kind":"waiting","at":"gate","reason":"emberi jóváhagyásra vár"}}
-{"at":"2026-11-06T05:56:34.639Z","event":"approval","decision":"approved"}
-{"at":"2026-11-06T05:56:34.639Z","event":"step","node":"gate","outcome":{"kind":"next","to":"send"}}
-{"at":"2026-11-06T05:56:34.639Z","event":"node_start","node":"send","seq":9}
-{"at":"2026-11-06T05:56:34.640Z","event":"node_end","node":"send","status":"ok"}
-{"at":"2026-11-06T05:56:34.640Z","event":"step","node":"send","outcome":{"kind":"next","to":"end"}}
-{"at":"2026-11-06T05:56:34.640Z","event":"end","status":"clean"}
+{"at":"2026-11-06T05:59:06.107Z","event":"node_start","node":"fetcher","seq":1}
+{"at":"2026-11-06T05:59:06.109Z","event":"node_end","node":"fetcher","status":"ok"}
+{"at":"2026-11-06T05:59:06.109Z","event":"step","node":"fetch","outcome":{"kind":"next","to":"triage"}}
+{"at":"2026-11-06T05:59:06.109Z","event":"node_start","node":"triager","seq":2}
+{"at":"2026-11-06T05:59:06.307Z","event":"jev","name":"triage","model":"jev-1.14.0","questions":6,"input_tokens":1066,"duration_ms":198,"answers":{"importance":{"type":"score","score":1.98,"confidence":0.96,"legend":{"0":"kicsi: egy vásárló egyszerű kérdése","1":"közepes: reklamáció, pénz vagy csere forog kockán","2":"nagy: nagy összeg, céges ügyfél, jogi vagy hírnév-kockázat"},"probabilities":{"0":0.01,"1":0.01,"2":0.98}},"urgency":{"type":"score","score":0.84,"confidence":0.7,"legend":{"0":"nem sürgős","1":"napokon belül kell","2":"még ma kell"},"probabilities":{"0":0.18,"1":0.8,"2":0.02}},"deadline":{"type":"choice","choice":"date_in_mail","confidence":1,"probabilities":{"none":0,"today":0,"this_week":0,"date_in_mail":1}},"tone":{"type":"choice","choice":"friendly","confidence":0.35,"probabilities":{"angry":0,"neutral":0.43,"friendly":0.57}},"complexity":{"type":"score","score":1.42,"confidence":0.31,"legend":{"0":"egy sablonmondat elég","1":"a tudásbázisból összeállítható","2":"egyedi mérlegelés vagy több fél kell hozzá"},"probabilities":{"0":0.02,"1":0.54,"2":0.44}},"support_level":{"type":"choice","choice":"L2","confidence":0.3,"probabilities":{"L1":0.47,"L2":0.53,"L3":0}}}}
+{"at":"2026-11-06T05:59:06.308Z","event":"node_end","node":"triager","status":"ok"}
+{"at":"2026-11-06T05:59:06.308Z","event":"step","node":"triage","outcome":{"kind":"next","to":"after_triage"}}
+{"at":"2026-11-06T05:59:06.308Z","event":"step","node":"after_triage","outcome":{"kind":"next","to":"write"}}
+{"at":"2026-11-06T05:59:06.308Z","event":"node_start","node":"writer","seq":3}
+{"at":"2026-11-06T05:59:24.626Z","event":"agent","node":"writer","attempt":1,"agent":"claude","ok":true,"cost_usd":0.1625526}
+{"at":"2026-11-06T05:59:24.626Z","event":"node_end","node":"writer","status":"issues"}
+{"at":"2026-11-06T05:59:24.626Z","event":"step","node":"write","outcome":{"kind":"next","to":"check"}}
+{"at":"2026-11-06T05:59:24.627Z","event":"node_start","node":"checker","seq":4}
+{"at":"2026-11-06T05:59:24.627Z","event":"node_end","node":"checker","status":"ok"}
+{"at":"2026-11-06T05:59:24.627Z","event":"step","node":"check","outcome":{"kind":"next","to":"after_check"}}
+{"at":"2026-11-06T05:59:24.627Z","event":"step","node":"after_check","outcome":{"kind":"next","to":"gate"}}
+{"at":"2026-11-06T05:59:24.627Z","event":"step","node":"gate","outcome":{"kind":"next","to":"propose"}}
+{"at":"2026-11-06T05:59:24.628Z","event":"node_start","node":"propose","seq":5}
+{"at":"2026-11-06T05:59:24.628Z","event":"node_end","node":"propose","status":"ok"}
+{"at":"2026-11-06T05:59:24.628Z","event":"step","node":"propose","outcome":{"kind":"waiting","at":"gate","reason":"emberi jóváhagyásra vár"}}

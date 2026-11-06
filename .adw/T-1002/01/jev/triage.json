@@ -22,44 +22,44 @@
     },
     "urgency": {
       "type": "score",
-      "score": 0.85,
-      "confidence": 0.74,
+      "score": 0.86,
+      "confidence": 0.76,
       "legend": {
         "0": "nem sürgős",
         "1": "napokon belül kell",
         "2": "még ma kell"
       },
       "probabilities": {
-        "0": 0.16,
-        "1": 0.83,
+        "0": 0.15,
+        "1": 0.84,
         "2": 0.01
       }
     },
     "deadline": {
       "type": "choice",
       "choice": "none",
-      "confidence": 0.79,
+      "confidence": 0.77,
       "probabilities": {
-        "none": 0.84,
+        "none": 0.83,
         "today": 0,
         "this_week": 0.01,
-        "date_in_mail": 0.15
+        "date_in_mail": 0.16
       }
     },
     "tone": {
       "type": "choice",
       "choice": "friendly",
-      "confidence": 0.79,
+      "confidence": 0.76,
       "probabilities": {
         "angry": 0,
-        "neutral": 0.14,
-        "friendly": 0.86
+        "neutral": 0.16,
+        "friendly": 0.84
       }
     },
     "complexity": {
       "type": "score",
-      "score": 1.32,
-      "confidence": 0.49,
+      "score": 1.35,
+      "confidence": 0.44,
       "legend": {
         "0": "egy sablonmondat elég",
         "1": "a tudásbázisból összeállítható",
@@ -67,8 +67,8 @@
       },
       "probabilities": {
         "0": 0.01,
-        "1": 0.66,
-        "2": 0.33
+        "1": 0.63,
+        "2": 0.36
       }
     },
     "support_level": {

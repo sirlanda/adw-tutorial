@@ -9,10 +9,10 @@
   },
   "triage": {
     "importance": 0.99,
-    "urgency": 0.85,
+    "urgency": 0.86,
     "deadline": "none",
     "tone": "friendly",
-    "complexity": 1.32,
+    "complexity": 1.35,
     "support_level": "L1",
     "support_level_confidence": 0.94
   }

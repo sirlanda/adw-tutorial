@@ -1,5 +1,6 @@
 import { ClaudeAgent } from "./engine/agent/ClaudeAgent";
 import { ReplayAgent } from "./engine/agent/ReplayAgent";
+import { RunLock } from "./engine/RunLock";
 import { engineState } from "./engine/state";
 import { Workflow } from "./engine/Workflow";
 import { Workspace } from "./engine/Workspace";
@@ -57,5 +58,11 @@ if (approve || reject) {
 }
 
 console.log(`${resume ? "folytatás" : "indítás"}: ${ws.dir} (next: ${state.next})`);
-await new Workflow(ws, def).run(state, { stopAfter });
+const lock = new RunLock(root);
+lock.acquire(); // egy futás egy repón
+try {
+  await new Workflow(ws, def).run(state, { stopAfter });
+} finally {
+  lock.release();
+}
 console.log(`vége: status=${state.status} next=${state.next}`);

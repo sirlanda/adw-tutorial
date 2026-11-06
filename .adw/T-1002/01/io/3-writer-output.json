@@ -3,14 +3,13 @@
   "done": [
     "Elolvastam az input fájlt (T-1002, hangnem: friendly, rendelésszám: NK-240317)",
     "Elolvastam a hangnem.md, szabalyzat.md és faq.md fájlt",
-    "Megírtam a választ a 30 napos növénygarancia alapján, és kértem a fényképeket a növényről és a címkéről",
-    "Ellenőriztem: a [T-1002] a tárgyban, megszólítás, aláírás, a rendelésszám szerepel, kb. 110 szó, tiltott szó nincs benne"
+    "Megírtam a választ a 30 napos növénygarancia és a reklamáció menete alapján (kb. 115 szó, tiltott szavak nélkül)"
   ],
   "problems": [
-    "[minor] reply.body: a tudásbázisban nincs leander-gondozási tanács, ezért az ügyfél kérdésére, hogy mit tehet, csak a címke útmutatójára és a garanciális folyamatra tudtam utalni"
+    "[minor] reply.body: a tudásbázis nem ad gondozási tanácsot a sárguló/száradó leander levelekre (a 'Mit tehetek ilyenkor?' kérdésre); a válasz a címkén szereplő gondozási útmutatóra utal"
   ],
   "reply": {
-    "subject": "Re: Elszáradt leander [T-1002]",
-    "body": "Kedves Szabó Péter!\n\nKöszönjük, hogy jelezte a leander problémáját (rendelésszám: NK-240317). Sajnáljuk, hogy a növény levelei megsárgultak.\n\nAz élő növényekre az átvételtől számított 30 napos garanciát vállalunk. Ha a növény ez idő alatt elpusztul, kicseréljük, vagy jóváírjuk a vételárát. A garancia feltétele, hogy a növényt a címkén szereplő útmutató szerint gondozták.\n\nKérjük, válaszlevélben küldjön fényképet a növényről és a címkéjéről. Ezek alapján kollégánk 1 munkanapon belül válaszol, és elindítja a cserét vagy a jóváírást. Ha az esetet a vezető kollégának kell eldöntenie, a döntésről 3 munkanapon belül értesítjük.\n\nA gondozáshoz addig is a címkén szereplő útmutatót ajánljuk.\n\nÜdvözlettel,\nNapsugár Kertészet ügyfélszolgálat"
+    "subject": "[T-1002] Elszáradt leander – rendelésszám: NK-240317",
+    "body": "Kedves Szabó Péter!\n\nKöszönjük, hogy jelezte, hogy az NK-240317 rendelésszámú leander levelei megsárgultak és leszáradtak.\n\nÉlő növényeinkre az átvételtől számított 30 napos növénygaranciát vállalunk. Ha a növény ez idő alatt elpusztul, cseréljük, vagy jóváírjuk a vételárát. A garancia feltétele, hogy a növényt a címkén szereplő útmutató szerint gondozták.\n\nA következő lépés: kérjük, válaszoljon erre a levélre, és küldjön fényképet a növényről és a címkéjéről. Ezután 1 munkanapon belül válaszolunk, és elindítjuk a cserét vagy a jóváírást.\n\nA levelek sárgulásának okáról nem tudunk részletes gondozási tanácsot adni. Kérjük, nézze át a címkén szereplő gondozási útmutatót, és hasonlítsa össze azzal, ahogyan most gondozza a növényt (ablakban tartja, hetente egyszer öntözi).\n\nÜdvözlettel,\nNapsugár Kertészet ügyfélszolgálat"
   }
 }

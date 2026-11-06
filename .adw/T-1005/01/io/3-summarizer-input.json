@@ -8,12 +8,12 @@
     "body": "Tisztelt Ügyfélszolgálat!\n\nHúsz napja vettem Önöknél egy sövénynyíró ollót (NK-240288), de közben kaptam egyet ajándékba, így ez felesleges. Bontatlan, az eredeti dobozban van. Tudom, hogy 14 nap az elállás, de kérdezném, hogy ilyen esetben van-e mód a visszaküldésre?\n\nKöszönettel,\nHorváth László"
   },
   "triage": {
-    "importance": 0.64,
+    "importance": 0.66,
     "urgency": 0.46,
     "deadline": "none",
     "tone": "friendly",
     "complexity": 1.31,
     "support_level": "L2",
-    "support_level_confidence": 0.64
+    "support_level_confidence": 0.61
   }
 }

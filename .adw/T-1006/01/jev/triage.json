@@ -7,31 +7,31 @@
   "answers": {
     "importance": {
       "type": "score",
-      "score": 1.99,
-      "confidence": 0.98,
+      "score": 1.98,
+      "confidence": 0.96,
       "legend": {
         "0": "kicsi: egy vásárló egyszerű kérdése",
         "1": "közepes: reklamáció, pénz vagy csere forog kockán",
         "2": "nagy: nagy összeg, céges ügyfél, jogi vagy hírnév-kockázat"
       },
       "probabilities": {
-        "0": 0,
+        "0": 0.01,
         "1": 0.01,
-        "2": 0.99
+        "2": 0.98
       }
     },
     "urgency": {
       "type": "score",
-      "score": 0.85,
-      "confidence": 0.72,
+      "score": 0.84,
+      "confidence": 0.7,
       "legend": {
         "0": "nem sürgős",
         "1": "napokon belül kell",
         "2": "még ma kell"
       },
       "probabilities": {
-        "0": 0.17,
-        "1": 0.81,
+        "0": 0.18,
+        "1": 0.8,
         "2": 0.02
       }
     },
@@ -49,17 +49,17 @@
     "tone": {
       "type": "choice",
       "choice": "friendly",
-      "confidence": 0.31,
+      "confidence": 0.35,
       "probabilities": {
         "angry": 0,
-        "neutral": 0.46,
-        "friendly": 0.54
+        "neutral": 0.43,
+        "friendly": 0.57
       }
     },
     "complexity": {
       "type": "score",
-      "score": 1.41,
-      "confidence": 0.32,
+      "score": 1.42,
+      "confidence": 0.31,
       "legend": {
         "0": "egy sablonmondat elég",
         "1": "a tudásbázisból összeállítható",
@@ -67,17 +67,17 @@
       },
       "probabilities": {
         "0": 0.02,
-        "1": 0.55,
-        "2": 0.43
+        "1": 0.54,
+        "2": 0.44
       }
     },
     "support_level": {
       "type": "choice",
       "choice": "L2",
-      "confidence": 0.28,
+      "confidence": 0.3,
       "probabilities": {
-        "L1": 0.48,
-        "L2": 0.52,
+        "L1": 0.47,
+        "L2": 0.53,
         "L3": 0
       }
     }
