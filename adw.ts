@@ -1,3 +1,5 @@
+import { ClaudeAgent } from "./engine/agent/ClaudeAgent";
+import { ReplayAgent } from "./engine/agent/ReplayAgent";
 import { engineState } from "./engine/state";
 import { Workflow } from "./engine/Workflow";
 import { Workspace } from "./engine/Workspace";
@@ -18,7 +20,12 @@ const resume = flags.includes("--resume");
 const stopAfter = flags.includes("--stop-after") ? flags[flags.indexOf("--stop-after") + 1] : undefined;
 
 const ws = resume ? Workspace.latest(root, ticketId) : Workspace.create(root, ticketId);
-const def = replyWorkflow({ root, ws, mailbox: new Mailbox(root), checker: new Checker() });
+// ADW_AGENT=replay: a 01-es (rögzített) futás válaszait játssza vissza, élő hívás nélkül.
+const agent =
+  process.env.ADW_AGENT === "replay"
+    ? new ReplayAgent(new Workspace(root, ticketId, process.env.ADW_REPLAY_FROM ?? "01").dir)
+    : new ClaudeAgent();
+const def = replyWorkflow({ root, ws, agent, mailbox: new Mailbox(root), checker: new Checker() });
 // Folytatáskor a state.json-t is a séma ellenőrzi: sérült fájlra nem indulunk el.
 const state: ReplyState = resume
   ? ReplyStateSchema.parse(ws.load())

@@ -1,0 +1,16 @@
+{
+  "status": "issues",
+  "done": [
+    "Elolvastam az input levelet (T-1002, Szabó Péter, leander, NK-240317)",
+    "Elolvastam a hangnem.md, szabalyzat.md és faq.md fájlokat",
+    "Megírtam a választ a 30 napos növénygarancia és a reklamáció menete alapján, a hangnem.md formai szabályai szerint (kb. 115 szó, nincsenek benne tiltott szavak)"
+  ],
+  "problems": [
+    "[minor] reply.body: a tudásbázis nem ad gondozási tanácsot a leanderhez (pl. sárguló levelek, öntözés), ezért a „Mit tehetek ilyenkor?” kérdésre csak a címkén lévő útmutatóra és a garanciális lépésekre tudtam utalni",
+    "[minor] reply.body: a garancia akkor él, ha a növény elpusztul; a levél szerint a növény csak sárgul és szárad, ezért a cserét a garancia feltételeihez kötöttem"
+  ],
+  "reply": {
+    "subject": "[T-1002] Re: Elszáradt leander",
+    "body": "Kedves Szabó Péter!\n\nSajnáljuk, hogy az NK-240317 számú rendelésben vásárolt leander levelei megsárgultak és leszáradtak.\n\nA növényt három hete rendelte, így még a 30 napos növénygarancia idején belül van. Ha a növény ez idő alatt elpusztul, kicseréljük, vagy jóváírjuk a vételárat. A garancia feltétele, hogy a növényt a címkén szereplő útmutató szerint gondozták.\n\nKérjük, válaszlevélben küldjön fényképet a növényről és a címkéjéről, és írja meg hozzá az NK-240317 rendelésszámot. A fotók beérkezése után 1 munkanapon belül válaszolunk, és ha a garancia feltételei teljesülnek, elindítjuk a cserét vagy a jóváírást.\n\nAddig is kérjük, gondozza a növényt a címkén szereplő útmutató szerint.\n\nÜdvözlettel,\nNapsugár Kertészet ügyfélszolgálat"
+  }
+}

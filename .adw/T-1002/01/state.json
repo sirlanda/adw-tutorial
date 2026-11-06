@@ -1,16 +1,16 @@
 {
   "ticket_id": "T-1002",
   "execution_id": "01",
-  "created_at": "2026-11-06T05:35:40.822Z",
-  "updated_at": "2026-11-06T05:35:40.827Z",
-  "status": "stuck",
+  "created_at": "2026-11-06T05:38:13.132Z",
+  "updated_at": "2026-11-06T05:38:33.606Z",
+  "status": "clean",
   "next": "end",
   "iteration": 0,
   "seq": 4,
   "nodes": {
     "fetcher": "ok",
-    "drafter": "ok",
-    "checker": "issues"
+    "writer": "issues",
+    "checker": "ok"
   },
   "mail": {
     "ticket_id": "T-1002",
@@ -21,17 +21,11 @@
     "body": "Tisztelt Ügyfélszolgálat!\n\nHárom hete rendeltem Önöktől egy leandert (rendelésszám: NK-240317). A növény az első két hétben szépen nézett ki, de az elmúlt napokban a levelei megsárgultak és leszáradtak. Az ablakban tartom, hetente egyszer öntözöm.\n\nMit tehetek ilyenkor? Van valami lehetőség cserére?\n\nÜdvözlettel,\nSzabó Péter"
   },
   "draft": {
-    "subject": "Re: Elszáradt leander",
-    "body": "Köszönjük levelét, hamarosan válaszolunk."
+    "subject": "[T-1002] Re: Elszáradt leander",
+    "body": "Kedves Szabó Péter!\n\nSajnáljuk, hogy az NK-240317 számú rendelésben vásárolt leander levelei megsárgultak és leszáradtak.\n\nA növényt három hete rendelte, így még a 30 napos növénygarancia idején belül van. Ha a növény ez idő alatt elpusztul, kicseréljük, vagy jóváírjuk a vételárat. A garancia feltétele, hogy a növényt a címkén szereplő útmutató szerint gondozták.\n\nKérjük, válaszlevélben küldjön fényképet a növényről és a címkéjéről, és írja meg hozzá az NK-240317 rendelésszámot. A fotók beérkezése után 1 munkanapon belül válaszolunk, és ha a garancia feltételei teljesülnek, elindítjuk a cserét vagy a jóváírást.\n\nAddig is kérjük, gondozza a növényt a címkén szereplő útmutató szerint.\n\nÜdvözlettel,\nNapsugár Kertészet ügyfélszolgálat"
   },
   "check": {
-    "green": false,
-    "problems": [
-      "[error] subject: hiányzik az ügy azonosítója: [T-1002]",
-      "[error] body: a levél nem 'Kedves ...!' megszólítással kezdődik",
-      "[error] body: a levél nem a 'Napsugár Kertészet ügyfélszolgálat' aláírással végződik",
-      "[error] body: a levél rendelésszáma (NK-240317) nincs a válaszban"
-    ]
-  },
-  "stuck_reason": "after_check: egyik ág sem igaz (zöld)"
+    "green": true,
+    "problems": []
+  }
 }

@@ -1,3 +1,4 @@
+import type { Agent } from "./agent/Agent";
 import type { Workspace } from "./Workspace";
 
 // Amit minden node-nak tudnia kell a futásról. A node ezen keresztül ér el mindent,
@@ -5,4 +6,5 @@ import type { Workspace } from "./Workspace";
 export interface RunContext {
   root: string;
   ws: Workspace;
+  agent: Agent; // claude élőben, replay a demóban
 }
