@@ -503,7 +503,25 @@ layout: section
 <div class="grid grid-cols-2 gap-4 text-xs">
 <div>
 
-```ts {all|1|4-9|12-15}
+````md magic-move
+```ts
+// workflow/graph.ts a 03-ban: pirosra nincs ág, a futás elakad
+const green = (s) => s.check?.green === true;
+const afterCheck = new DecisionNode<ReplyState>("after_check", [
+  { label: "zöld", when: green, to: "end" },
+]);
+```
+```ts
+// workflow/graph.ts a 05-ben: a piros ág a ciklus
+const green = (s) => s.check?.green === true;
+const afterCheck = new DecisionNode<ReplyState>("after_check", [
+  { label: "zöld", when: green, to: "end" },
+  { label: "piros", when: (s) => !green(s), to: "fix" },
+]);
+```
+````
+
+```ts {all|1|4-9|10-14}
 export const LIMITS: Limits = { maxFix: 2 };
 
 export class Fixer extends AgentNode<...> {
@@ -512,10 +530,6 @@ export class Fixer extends AgentNode<...> {
       return { kind: "max_reached",
         reason: `fixer: ${state.iteration} kör után még piros` };
     return null;
-  }
-  protected input(state) {
-    return { mail, draft: state.draft!,
-             problems: state.check!.problems };
   }
   protected apply(state, out) {
     state.draft = out.reply;
@@ -668,12 +682,25 @@ layout: section
 <div class="grid grid-cols-2 gap-4 text-xs">
 <div>
 
+````md magic-move
 ```ts
+// engine/Outcome.ts a 01-ben, workflow/graph.ts a 05-ben
 export type Outcome =
   | { kind: "next"; to: string }
-  | { kind: "waiting"; at: string; reason: string }  // ÚJ
   | Failure;
+
+  { label: "zöld", when: green, to: "end" },
 ```
+```ts
+// a 07-ben: a futás meg tud állni, a zöld levél is a kapuhoz megy
+export type Outcome =
+  | { kind: "next"; to: string }
+  | { kind: "waiting"; at: string; reason: string }
+  | Failure;
+
+  { label: "zöld", when: green, to: "gate" },
+```
+````
 
 ```ts {all|1-5|8-10}
 const decision = (s) => s.approval?.decision;
@@ -704,7 +731,8 @@ state.status = "running";
 bun adw.ts T-1006
 #  vége: status=waiting next=gate   → outbox/T-1006.md
 
-bun adw.ts T-1006 --reject "Kérdezd meg, hogy jogosult-e ÁFA visszatérítésre!"
+bun adw.ts T-1006 \
+  --reject "Kérdezd meg, hogy jogosult-e ÁFA visszatérítésre!"
 #  gate → fix → check → gate → propose → waiting  (iteration 1)
 
 bun adw.ts T-1006 --approve
