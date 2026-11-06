@@ -1,0 +1,15 @@
+{
+  "status": "ok",
+  "done": [
+    "letöltve: Nyitvatartás (kovacs.anna@example.com)"
+  ],
+  "problems": [],
+  "mail": {
+    "ticket_id": "T-1001",
+    "from": "kovacs.anna@example.com",
+    "name": "Kovács Anna",
+    "subject": "Nyitvatartás",
+    "received_at": "2026-11-05T08:12:00+01:00",
+    "body": "Jó napot!\n\nMikor vannak nyitva szombaton? Szeretnék személyesen bemenni a kertészetbe.\n\nKöszönöm,\nKovács Anna"
+  }
+}

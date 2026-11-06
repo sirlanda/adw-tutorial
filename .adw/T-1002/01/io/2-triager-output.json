@@ -1,0 +1,19 @@
+{
+  "status": "ok",
+  "done": [
+    "Jev: L1 (0.96), hangnem friendly, sürgősség 0.9, súly 1.0",
+    "az ügynök ír, a triage priorként az inputjában"
+  ],
+  "problems": [],
+  "route": "write",
+  "template": null,
+  "triage": {
+    "importance": 0.99,
+    "urgency": 0.86,
+    "deadline": "none",
+    "tone": "friendly",
+    "complexity": 1.34,
+    "support_level": "L1",
+    "support_level_confidence": 0.96
+  }
+}

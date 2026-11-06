@@ -5,6 +5,8 @@ import { CheckNode } from "./nodes/CheckNode";
 import { Escalate } from "./nodes/Escalate";
 import { Fetcher } from "./nodes/Fetcher";
 import { Fixer } from "./nodes/Fixer";
+import { Summarizer } from "./nodes/Summarizer";
+import { Triager } from "./nodes/Triager";
 import { Writer } from "./nodes/Writer";
 import type { Limits, ReplyContext } from "./ReplyContext";
 import type { ReplyState } from "./state";
@@ -16,13 +18,21 @@ export const LIMITS: Limits = { maxFix: Number(process.env.ADW_MAX_FIX ?? 2) };
 //                             ^                   \-> (piros) fix -> check ...
 // Elakadás és kimerült korlát: escalate -> end.
 export function replyWorkflow(ctx: ReplyContext): WorkflowDef<ReplyState> {
+  const afterTriage = new DecisionNode<ReplyState>("after_triage", [
+    { label: "sablon", when: (s) => s.triage?.route === "template", to: "check" },
+    { label: "L2/L3", when: (s) => s.triage?.route === "escalate", to: "summarize" },
+    { label: "ügynök ír", when: (s) => s.triage?.route === "write", to: "write" },
+  ]);
   const afterCheck = new DecisionNode<ReplyState>("after_check", [
     { label: "zöld", when: (s) => s.check?.green === true, to: "end" },
     { label: "piros", when: (s) => s.check?.green === false, to: "fix" },
   ]);
   return {
     nodes: [
-      new Fetcher(ctx, "write"),
+      new Fetcher(ctx, "triage"),
+      new Triager(ctx, "after_triage"),
+      afterTriage,
+      new Summarizer(ctx, "escalate"),
       new Writer(ctx, "check"),
       new CheckNode(ctx, "after_check"),
       afterCheck,

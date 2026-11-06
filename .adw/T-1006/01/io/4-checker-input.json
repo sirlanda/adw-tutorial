@@ -1,0 +1,14 @@
+{
+  "mail": {
+    "ticket_id": "T-1006",
+    "from": "beszerzes@zoldudvar-kft.example.com",
+    "name": "Molnár Judit",
+    "subject": "200 db tuja céges rendelés",
+    "received_at": "2026-11-05T14:50:00+01:00",
+    "body": "Tisztelt Napsugár Kertészet!\n\nA Zöld Udvar Kft. nevében érdeklődöm: egy irodaház kertjébe 200 darab smaragd tuját szeretnénk rendelni, 80-100 cm-es méretben. A kivitelezés november 25-én kezdődik, addig kellene megérkeznie. Céges számlát kérnénk.\n\nKérem, jelezzék, hogy van-e ekkora készlet, és mi a szállítás menete.\n\nÜdvözlettel,\nMolnár Judit\nbeszerzési vezető"
+  },
+  "reply": {
+    "subject": "[T-1006] Re: 200 db tuja céges rendelés",
+    "body": "Kedves Molnár Judit!\n\nKöszönjük érdeklődését. 50 darab feletti növényrendelésnél egyedi ajánlatot adunk: a rendelés beérkezése után kollégánk 2 munkanapon belül felveszi Önnel a kapcsolatot, és egyezteti a készletet és a szállítási időt.\n\nA 200 darab 80–100 cm-es smaragd tuja készletéről jelenleg nem tudunk tájékoztatást adni, és konkrét szállítási napot sem ígérhetünk. A november 25-i határidőt kérjük, jelezze kollégánknak az egyeztetéskor.\n\nA szállítás menete általában: futárszolgálattal szállítunk, a szállítási idő a rendelés visszaigazolásától számítva 2–4 munkanap. Élő növényt csak hétfőtől szerdáig adunk fel. 25 000 Ft feletti rendelésnél a szállítás díjmentes.\n\nCéges számlához a rendelésnél adja meg a cégnevet és az adószámot, a számlát a Zöld Udvar Kft. nevére állítjuk ki.\n\nÜdvözlettel,\nNapsugár Kertészet ügyfélszolgálat"
+  }
+}

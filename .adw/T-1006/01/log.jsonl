@@ -1,0 +1,17 @@
+{"at":"2026-11-06T05:51:46.203Z","event":"node_start","node":"fetcher","seq":1}
+{"at":"2026-11-06T05:51:46.204Z","event":"node_end","node":"fetcher","status":"ok"}
+{"at":"2026-11-06T05:51:46.204Z","event":"step","node":"fetch","outcome":{"kind":"next","to":"triage"}}
+{"at":"2026-11-06T05:51:46.204Z","event":"node_start","node":"triager","seq":2}
+{"at":"2026-11-06T05:51:46.393Z","event":"jev","name":"triage","model":"jev-1.14.0","questions":6,"input_tokens":1066,"duration_ms":189,"answers":{"importance":{"type":"score","score":1.98,"confidence":0.96,"legend":{"0":"kicsi: egy vásárló egyszerű kérdése","1":"közepes: reklamáció, pénz vagy csere forog kockán","2":"nagy: nagy összeg, céges ügyfél, jogi vagy hírnév-kockázat"},"probabilities":{"0":0.01,"1":0.01,"2":0.98}},"urgency":{"type":"score","score":0.81,"confidence":0.66,"legend":{"0":"nem sürgős","1":"napokon belül kell","2":"még ma kell"},"probabilities":{"0":0.21,"1":0.77,"2":0.02}},"deadline":{"type":"choice","choice":"date_in_mail","confidence":1,"probabilities":{"none":0,"today":0,"this_week":0,"date_in_mail":1}},"tone":{"type":"choice","choice":"friendly","confidence":0.28,"probabilities":{"angry":0,"neutral":0.48,"friendly":0.52}},"complexity":{"type":"score","score":1.41,"confidence":0.32,"legend":{"0":"egy sablonmondat elég","1":"a tudásbázisból összeállítható","2":"egyedi mérlegelés vagy több fél kell hozzá"},"probabilities":{"0":0.02,"1":0.55,"2":0.43}},"support_level":{"type":"choice","choice":"L2","confidence":0.34,"probabilities":{"L1":0.44,"L2":0.56,"L3":0}}}}
+{"at":"2026-11-06T05:51:46.394Z","event":"node_end","node":"triager","status":"ok"}
+{"at":"2026-11-06T05:51:46.394Z","event":"step","node":"triage","outcome":{"kind":"next","to":"after_triage"}}
+{"at":"2026-11-06T05:51:46.394Z","event":"step","node":"after_triage","outcome":{"kind":"next","to":"write"}}
+{"at":"2026-11-06T05:51:46.394Z","event":"node_start","node":"writer","seq":3}
+{"at":"2026-11-06T05:52:03.863Z","event":"agent","node":"writer","attempt":1,"agent":"claude","ok":true,"cost_usd":0.1776754}
+{"at":"2026-11-06T05:52:03.864Z","event":"node_end","node":"writer","status":"issues"}
+{"at":"2026-11-06T05:52:03.864Z","event":"step","node":"write","outcome":{"kind":"next","to":"check"}}
+{"at":"2026-11-06T05:52:03.864Z","event":"node_start","node":"checker","seq":4}
+{"at":"2026-11-06T05:52:03.865Z","event":"node_end","node":"checker","status":"ok"}
+{"at":"2026-11-06T05:52:03.865Z","event":"step","node":"check","outcome":{"kind":"next","to":"after_check"}}
+{"at":"2026-11-06T05:52:03.865Z","event":"step","node":"after_check","outcome":{"kind":"next","to":"end"}}
+{"at":"2026-11-06T05:52:03.865Z","event":"end","status":"clean"}

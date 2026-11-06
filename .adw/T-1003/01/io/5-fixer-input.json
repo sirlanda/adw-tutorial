@@ -1,0 +1,17 @@
+{
+  "mail": {
+    "ticket_id": "T-1003",
+    "from": "nagy.gabor@example.com",
+    "name": "Nagy Gábor",
+    "subject": "HARMADSZOR ÍROK!!! Hol a rendelésem?",
+    "received_at": "2026-11-05T10:05:00+01:00",
+    "body": "Ez már a harmadik levelem, az előző kettőre választ sem kaptam!!!\n\nOktóber 27-én rendeltem (NK-240402), ki is fizettem kártyával, és azóta SEMMI. Se csomag, se értesítés. Holnap lenne a születésnapi ajándék, amire kellett volna.\n\nHa holnapig nem jön meg, visszakérem a pénzem és mindenhol leírom, hogy milyen cég ez.\n\nNagy Gábor"
+  },
+  "draft": {
+    "subject": "[T-1003] Az NK-240402 számú rendelése",
+    "body": "Kedves Nagy Gábor!\n\nElnézést kérünk, hogy korábbi leveleire nem kapott választ, és hogy az NK-240402 számú rendelése még nem érkezett meg. Értjük, mennyire bosszantó ez, főleg egy születésnapi ajándéknál.\n\nA szállítási idő a rendelés visszaigazolásától számítva 2–4 munkanap. A rendelés állapotát a visszaigazoló e-mailben kapott linken követheti.\n\nKonkrét szállítási napot sajnos nem ígérhetünk, ezért azt sem tudjuk megígérni, hogy a csomag holnapig megérkezik.\n\nA következő lépés: ügyét reklamációként kezeljük, és kollégánk 1 munkanapon belül jelentkezik a rendelés pontos állapotával és a megoldással. Ennek során a visszatérítési kérését is megvizsgáljuk.\n\nÜdvözlettel,\nNapsugár Kertészet ügyfélszolgálat"
+  },
+  "problems": [
+    "[error] body: reklamációnál kötelező a jogorvoslati mondat az aláírás előtt: 'Panaszával a lakóhelye szerinti békéltető testülethez is fordulhat.'"
+  ]
+}

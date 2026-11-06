@@ -1,0 +1,85 @@
+{
+  "model": "jev-1.14.0",
+  "state": {
+    "subject": "Kosár gomb nem működik Safarin",
+    "body": "Üdvözlöm!\n\nSzerettem volna rendelni, de a webshopban a Kosárba gomb nem csinál semmit. iPhone-on Safariban próbáltam, többször is, kijelentkezve és bejelentkezve is. Chrome-ban a gépemen működik.\n\nJelzem, hátha más is tapasztalja.\n\nTóth Eszter"
+  },
+  "answers": {
+    "importance": {
+      "type": "score",
+      "score": 0.69,
+      "confidence": 0.53,
+      "legend": {
+        "0": "kicsi: egy vásárló egyszerű kérdése",
+        "1": "közepes: reklamáció, pénz vagy csere forog kockán",
+        "2": "nagy: nagy összeg, céges ügyfél, jogi vagy hírnév-kockázat"
+      },
+      "probabilities": {
+        "0": 0.31,
+        "1": 0.69,
+        "2": 0
+      }
+    },
+    "urgency": {
+      "type": "score",
+      "score": 0.79,
+      "confidence": 0.56,
+      "legend": {
+        "0": "nem sürgős",
+        "1": "napokon belül kell",
+        "2": "még ma kell"
+      },
+      "probabilities": {
+        "0": 0.25,
+        "1": 0.71,
+        "2": 0.04
+      }
+    },
+    "deadline": {
+      "type": "choice",
+      "choice": "none",
+      "confidence": 1,
+      "probabilities": {
+        "none": 1,
+        "today": 0,
+        "this_week": 0,
+        "date_in_mail": 0
+      }
+    },
+    "tone": {
+      "type": "choice",
+      "choice": "friendly",
+      "confidence": 0.8,
+      "probabilities": {
+        "angry": 0,
+        "neutral": 0.13,
+        "friendly": 0.87
+      }
+    },
+    "complexity": {
+      "type": "score",
+      "score": 1.35,
+      "confidence": 0.28,
+      "legend": {
+        "0": "egy sablonmondat elég",
+        "1": "a tudásbázisból összeállítható",
+        "2": "egyedi mérlegelés vagy több fél kell hozzá"
+      },
+      "probabilities": {
+        "0": 0.06,
+        "1": 0.52,
+        "2": 0.42
+      }
+    },
+    "support_level": {
+      "type": "choice",
+      "choice": "L3",
+      "confidence": 1,
+      "probabilities": {
+        "L1": 0,
+        "L2": 0,
+        "L3": 1
+      }
+    }
+  }
+}

@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { EngineStateSchema } from "../engine/state";
+import { TriageSchema } from "./triage";
 
 export const MailSchema = z.object({
   ticket_id: z.string(),
@@ -20,6 +21,8 @@ export const ReplyStateSchema = EngineStateSchema.extend({
   mail: MailSchema.optional(),
   draft: ReplySchema.optional(),
   check: z.object({ green: z.boolean(), problems: z.array(z.string()) }).optional(),
+  triage: z.object({ route: z.enum(["template", "write", "escalate"]), jev: TriageSchema.nullable() }).optional(),
+  summary: z.string().optional(), // az olcsó LLM átadó összefoglalója (L2/L3)
   handover: z.string().optional(), // az escalate node átadó sora
 });
 

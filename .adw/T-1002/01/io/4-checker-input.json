@@ -1,0 +1,14 @@
+{
+  "mail": {
+    "ticket_id": "T-1002",
+    "from": "szabo.peter@example.com",
+    "name": "Szabó Péter",
+    "subject": "Elszáradt leander",
+    "received_at": "2026-11-05T09:40:00+01:00",
+    "body": "Tisztelt Ügyfélszolgálat!\n\nHárom hete rendeltem Önöktől egy leandert (rendelésszám: NK-240317). A növény az első két hétben szépen nézett ki, de az elmúlt napokban a levelei megsárgultak és leszáradtak. Az ablakban tartom, hetente egyszer öntözöm.\n\nMit tehetek ilyenkor? Van valami lehetőség cserére?\n\nÜdvözlettel,\nSzabó Péter"
+  },
+  "reply": {
+    "subject": "[T-1002] Elszáradt leander – NK-240317",
+    "body": "Kedves Szabó Péter!\n\nKöszönjük, hogy jelezte a leander problémáját (rendelésszám: NK-240317).\n\nÉlő növényeinkre az átvételtől számított 30 napos növénygaranciát vállalunk. Ha a növény ez idő alatt elpusztul, cseréljük, vagy a vételárat jóváírjuk. A garancia feltétele, hogy a növényt a címkén szereplő útmutató szerint gondozták.\n\nA következő lépés: kérjük, válaszlevélben küldjön fényképet a növényről és a címkéjéről. Ezek beérkezése után 1 munkanapon belül válaszolunk, és elindítjuk a cserét vagy a jóváírást.\n\nA gondozáshoz a növény címkéjén szereplő útmutató ad eligazítást.\n\nÜdvözlettel,\nNapsugár Kertészet ügyfélszolgálat"
+  }
+}

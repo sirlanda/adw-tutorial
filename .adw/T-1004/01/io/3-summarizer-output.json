@@ -1,0 +1,9 @@
+{
+  "status": "ok",
+  "done": [
+    "Beolvastam a T-1004 input fájlt (levél + triage).",
+    "Összefoglaltam az ügyfél jelzését, a konkrét tényeket és a másik csapatnak szóló kérdést."
+  ],
+  "problems": [],
+  "summary": "Tóth Eszter (2026-11-05) jelzi, hogy a webshopban a „Kosárba” gomb iPhone-on Safariban nem csinál semmit, bejelentkezve és kijelentkezve is többször próbálta; Chrome-ban a gépén működik, rendelni szeretne. Nincs rendelésszám vagy konkrét termék megnevezve; az ügyfél hozzáteszi, hogy mások is tapasztalhatják. Kérdés a technikai csapatnak: reprodukálható-e a Safari/iOS-os kosárba helyezési hiba, és mi az oka? (L3 technikai hiba, nincs határidő, barátságos hangnem.)"
+}

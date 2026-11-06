@@ -1,0 +1,19 @@
+{
+  "mail": {
+    "ticket_id": "T-1004",
+    "from": "toth.eszter@example.com",
+    "name": "Tóth Eszter",
+    "subject": "Kosár gomb nem működik Safarin",
+    "received_at": "2026-11-05T11:30:00+01:00",
+    "body": "Üdvözlöm!\n\nSzerettem volna rendelni, de a webshopban a Kosárba gomb nem csinál semmit. iPhone-on Safariban próbáltam, többször is, kijelentkezve és bejelentkezve is. Chrome-ban a gépemen működik.\n\nJelzem, hátha más is tapasztalja.\n\nTóth Eszter"
+  },
+  "triage": {
+    "importance": 0.69,
+    "urgency": 0.79,
+    "deadline": "none",
+    "tone": "friendly",
+    "complexity": 1.35,
+    "support_level": "L3",
+    "support_level_confidence": 1
+  }
+}

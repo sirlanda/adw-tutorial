@@ -1,0 +1,85 @@
+{
+  "model": "jev-1.14.0",
+  "state": {
+    "subject": "200 db tuja céges rendelés",
+    "body": "Tisztelt Napsugár Kertészet!\n\nA Zöld Udvar Kft. nevében érdeklődöm: egy irodaház kertjébe 200 darab smaragd tuját szeretnénk rendelni, 80-100 cm-es méretben. A kivitelezés november 25-én kezdődik, addig kellene megérkeznie. Céges számlát kérnénk.\n\nKérem, jelezzék, hogy van-e ekkora készlet, és mi a szállítás menete.\n\nÜdvözlettel,\nMolnár Judit\nbeszerzési vezető"
+  },
+  "answers": {
+    "importance": {
+      "type": "score",
+      "score": 1.98,
+      "confidence": 0.96,
+      "legend": {
+        "0": "kicsi: egy vásárló egyszerű kérdése",
+        "1": "közepes: reklamáció, pénz vagy csere forog kockán",
+        "2": "nagy: nagy összeg, céges ügyfél, jogi vagy hírnév-kockázat"
+      },
+      "probabilities": {
+        "0": 0.01,
+        "1": 0.01,
+        "2": 0.98
+      }
+    },
+    "urgency": {
+      "type": "score",
+      "score": 0.81,
+      "confidence": 0.66,
+      "legend": {
+        "0": "nem sürgős",
+        "1": "napokon belül kell",
+        "2": "még ma kell"
+      },
+      "probabilities": {
+        "0": 0.21,
+        "1": 0.77,
+        "2": 0.02
+      }
+    },
+    "deadline": {
+      "type": "choice",
+      "choice": "date_in_mail",
+      "confidence": 1,
+      "probabilities": {
+        "none": 0,
+        "today": 0,
+        "this_week": 0,
+        "date_in_mail": 1
+      }
+    },
+    "tone": {
+      "type": "choice",
+      "choice": "friendly",
+      "confidence": 0.28,
+      "probabilities": {
+        "angry": 0,
+        "neutral": 0.48,
+        "friendly": 0.52
+      }
+    },
+    "complexity": {
+      "type": "score",
+      "score": 1.41,
+      "confidence": 0.32,
+      "legend": {
+        "0": "egy sablonmondat elég",
+        "1": "a tudásbázisból összeállítható",
+        "2": "egyedi mérlegelés vagy több fél kell hozzá"
+      },
+      "probabilities": {
+        "0": 0.02,
+        "1": 0.55,
+        "2": 0.43
+      }
+    },
+    "support_level": {
+      "type": "choice",
+      "choice": "L2",
+      "confidence": 0.34,
+      "probabilities": {
+        "L1": 0.44,
+        "L2": 0.56,
+        "L3": 0
+      }
+    }
+  }
+}

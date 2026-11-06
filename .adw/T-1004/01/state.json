@@ -1,0 +1,38 @@
+{
+  "ticket_id": "T-1004",
+  "execution_id": "01",
+  "created_at": "2026-11-06T05:51:31.950Z",
+  "updated_at": "2026-11-06T05:51:39.419Z",
+  "status": "clean",
+  "next": "end",
+  "iteration": 0,
+  "seq": 5,
+  "nodes": {
+    "fetcher": "ok",
+    "triager": "ok",
+    "summarizer": "ok",
+    "escalate": "ok"
+  },
+  "mail": {
+    "ticket_id": "T-1004",
+    "from": "toth.eszter@example.com",
+    "name": "Tóth Eszter",
+    "subject": "Kosár gomb nem működik Safarin",
+    "received_at": "2026-11-05T11:30:00+01:00",
+    "body": "Üdvözlöm!\n\nSzerettem volna rendelni, de a webshopban a Kosárba gomb nem csinál semmit. iPhone-on Safariban próbáltam, többször is, kijelentkezve és bejelentkezve is. Chrome-ban a gépemen működik.\n\nJelzem, hátha más is tapasztalja.\n\nTóth Eszter"
+  },
+  "triage": {
+    "route": "escalate",
+    "jev": {
+      "importance": 0.69,
+      "urgency": 0.79,
+      "deadline": "none",
+      "tone": "friendly",
+      "complexity": 1.35,
+      "support_level": "L3",
+      "support_level_confidence": 1
+    }
+  },
+  "summary": "Tóth Eszter (2026-11-05) jelzi, hogy a webshopban a „Kosárba” gomb iPhone-on Safariban nem csinál semmit, bejelentkezve és kijelentkezve is többször próbálta; Chrome-ban a gépén működik, rendelni szeretne. Nincs rendelésszám vagy konkrét termék megnevezve; az ügyfél hozzáteszi, hogy mások is tapasztalhatják. Kérdés a technikai csapatnak: reprodukálható-e a Safari/iOS-os kosárba helyezési hiba, és mi az oka? (L3 technikai hiba, nincs határidő, barátságos hangnem.)",
+  "handover": "Ügy: T-1004, futás: 01, státusz: running. Szint: L3. Összefoglaló: Tóth Eszter (2026-11-05) jelzi, hogy a webshopban a „Kosárba” gomb iPhone-on Safariban nem csinál semmit, bejelentkezve és kijelentkezve is többször próbálta; Chrome-ban a gépén működik, rendelni szeretne. Nincs rendelésszám vagy konkrét termék megnevezve; az ügyfél hozzáteszi, hogy mások is tapasztalhatják. Kérdés a technikai csapatnak: reprodukálható-e a Safari/iOS-os kosárba helyezési hiba, és mi az oka? (L3 technikai hiba, nincs határidő, barátságos hangnem.) Vázlat nem készült."
+}

@@ -4,7 +4,9 @@ import { engineState } from "./engine/state";
 import { Workflow } from "./engine/Workflow";
 import { Workspace } from "./engine/Workspace";
 import { Checker } from "./services/Checker";
+import { Jev } from "./services/Jev";
 import { Mailbox } from "./services/Mailbox";
+import { Templates } from "./services/Templates";
 import { LIMITS, replyWorkflow } from "./workflow/graph";
 import { ReplyStateSchema, type ReplyState } from "./workflow/state";
 
@@ -21,11 +23,10 @@ const stopAfter = flags.includes("--stop-after") ? flags[flags.indexOf("--stop-a
 
 const ws = resume ? Workspace.latest(root, ticketId) : Workspace.create(root, ticketId);
 // ADW_AGENT=replay: a 01-es (rögzített) futás válaszait játssza vissza, élő hívás nélkül.
-const agent =
-  process.env.ADW_AGENT === "replay"
-    ? new ReplayAgent(new Workspace(root, ticketId, process.env.ADW_REPLAY_FROM ?? "01").dir)
-    : new ClaudeAgent();
-const def = replyWorkflow({ root, ws, agent, mailbox: new Mailbox(root), checker: new Checker(), limits: LIMITS });
+const replayDir = process.env.ADW_AGENT === "replay" ? new Workspace(root, ticketId, process.env.ADW_REPLAY_FROM ?? "01").dir : null;
+const agent = replayDir ? new ReplayAgent(replayDir) : new ClaudeAgent();
+const jev = Jev.fromEnv(ws.dir, replayDir, (entry) => ws.log(entry));
+const def = replyWorkflow({ root, ws, agent, jev, mailbox: new Mailbox(root), checker: new Checker(), templates: new Templates(root), limits: LIMITS });
 // Folytatáskor a state.json-t is a séma ellenőrzi: sérült fájlra nem indulunk el.
 const state: ReplyState = resume
   ? ReplyStateSchema.parse(ws.load())

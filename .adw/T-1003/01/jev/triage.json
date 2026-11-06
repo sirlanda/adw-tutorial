@@ -1,0 +1,85 @@
+{
+  "model": "jev-1.14.0",
+  "state": {
+    "subject": "HARMADSZOR ÍROK!!! Hol a rendelésem?",
+    "body": "Ez már a harmadik levelem, az előző kettőre választ sem kaptam!!!\n\nOktóber 27-én rendeltem (NK-240402), ki is fizettem kártyával, és azóta SEMMI. Se csomag, se értesítés. Holnap lenne a születésnapi ajándék, amire kellett volna.\n\nHa holnapig nem jön meg, visszakérem a pénzem és mindenhol leírom, hogy milyen cég ez.\n\nNagy Gábor"
+  },
+  "answers": {
+    "importance": {
+      "type": "score",
+      "score": 1.07,
+      "confidence": 0.9,
+      "legend": {
+        "0": "kicsi: egy vásárló egyszerű kérdése",
+        "1": "közepes: reklamáció, pénz vagy csere forog kockán",
+        "2": "nagy: nagy összeg, céges ügyfél, jogi vagy hírnév-kockázat"
+      },
+      "probabilities": {
+        "0": 0,
+        "1": 0.93,
+        "2": 0.07
+      }
+    },
+    "urgency": {
+      "type": "score",
+      "score": 1.32,
+      "confidence": 0.5,
+      "legend": {
+        "0": "nem sürgős",
+        "1": "napokon belül kell",
+        "2": "még ma kell"
+      },
+      "probabilities": {
+        "0": 0,
+        "1": 0.67,
+        "2": 0.33
+      }
+    },
+    "deadline": {
+      "type": "choice",
+      "choice": "today",
+      "confidence": 0.83,
+      "probabilities": {
+        "none": 0,
+        "today": 0.87,
+        "this_week": 0,
+        "date_in_mail": 0.13
+      }
+    },
+    "tone": {
+      "type": "choice",
+      "choice": "angry",
+      "confidence": 1,
+      "probabilities": {
+        "angry": 1,
+        "neutral": 0,
+        "friendly": 0
+      }
+    },
+    "complexity": {
+      "type": "score",
+      "score": 1.37,
+      "confidence": 0.05,
+      "legend": {
+        "0": "egy sablonmondat elég",
+        "1": "a tudásbázisból összeállítható",
+        "2": "egyedi mérlegelés vagy több fél kell hozzá"
+      },
+      "probabilities": {
+        "0": 0.09,
+        "1": 0.45,
+        "2": 0.46
+      }
+    },
+    "support_level": {
+      "type": "choice",
+      "choice": "L1",
+      "confidence": 0.94,
+      "probabilities": {
+        "L1": 0.96,
+        "L2": 0.02,
+        "L3": 0.02
+      }
+    }
+  }
+}

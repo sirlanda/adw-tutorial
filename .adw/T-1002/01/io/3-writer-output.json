@@ -1,0 +1,15 @@
+{
+  "status": "issues",
+  "done": [
+    "Elolvastam az inputot (T-1002, tone: friendly, NK-240317 rendelésszámmal)",
+    "Elolvastam a hangnem.md, szabalyzat.md és faq.md fájlokat",
+    "Megírtam a választ a 30 napos növénygarancia és a reklamáció menete alapján, legfeljebb 150 szóban, tiltott szavak nélkül"
+  ],
+  "problems": [
+    "[minor] mail.body 'Mit tehetek ilyenkor?': a tudásbázisban nincs leander-gondozási tanács (öntözés, fény), ezért a válasz csak a címkén szereplő útmutatóra és a garanciális eljárásra hivatkozik"
+  ],
+  "reply": {
+    "subject": "[T-1002] Elszáradt leander – NK-240317",
+    "body": "Kedves Szabó Péter!\n\nKöszönjük, hogy jelezte a leander problémáját (rendelésszám: NK-240317).\n\nÉlő növényeinkre az átvételtől számított 30 napos növénygaranciát vállalunk. Ha a növény ez idő alatt elpusztul, cseréljük, vagy a vételárat jóváírjuk. A garancia feltétele, hogy a növényt a címkén szereplő útmutató szerint gondozták.\n\nA következő lépés: kérjük, válaszlevélben küldjön fényképet a növényről és a címkéjéről. Ezek beérkezése után 1 munkanapon belül válaszolunk, és elindítjuk a cserét vagy a jóváírást.\n\nA gondozáshoz a növény címkéjén szereplő útmutató ad eligazítást.\n\nÜdvözlettel,\nNapsugár Kertészet ügyfélszolgálat"
+  }
+}

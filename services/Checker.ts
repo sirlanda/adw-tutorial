@@ -39,7 +39,7 @@ export class Checker {
     if ((body.match(HUNGARIAN_WORDS) ?? []).length < 2) {
       problems.push("[error] body: a válasz nem tűnik magyar nyelvűnek");
     }
-    if (COMPLAINT.test(mail.body) && !body.includes(LEGAL_LINE)) {
+    if (COMPLAINT.test(`${mail.subject} ${mail.body}`) && !body.includes(LEGAL_LINE)) {
       problems.push(`[error] body: reklamációnál kötelező a jogorvoslati mondat az aláírás előtt: '${LEGAL_LINE}'`);
     }
     for (const order of new Set(mail.body.match(ORDER_NUMBER) ?? [])) {

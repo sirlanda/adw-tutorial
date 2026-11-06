@@ -1,0 +1,35 @@
+{
+  "ticket_id": "T-1001",
+  "execution_id": "01",
+  "created_at": "2026-11-06T05:50:50.044Z",
+  "updated_at": "2026-11-06T05:50:50.050Z",
+  "status": "clean",
+  "next": "end",
+  "iteration": 0,
+  "seq": 4,
+  "nodes": {
+    "fetcher": "ok",
+    "triager": "ok",
+    "checker": "ok"
+  },
+  "mail": {
+    "ticket_id": "T-1001",
+    "from": "kovacs.anna@example.com",
+    "name": "Kovács Anna",
+    "subject": "Nyitvatartás",
+    "received_at": "2026-11-05T08:12:00+01:00",
+    "body": "Jó napot!\n\nMikor vannak nyitva szombaton? Szeretnék személyesen bemenni a kertészetbe.\n\nKöszönöm,\nKovács Anna"
+  },
+  "triage": {
+    "route": "template",
+    "jev": null
+  },
+  "draft": {
+    "subject": "[T-1001] Re: Nyitvatartás",
+    "body": "Kedves Vásárlónk!\n\nKöszönjük a levelét. A kertészet és az átvevőpont hétfőtől péntekig 8:00 és 18:00 között,\nszombaton 8:00 és 13:00 között tart nyitva. Vasárnap és ünnepnapokon zárva vagyunk, a\nwebáruház viszont a nap 24 órájában fogad rendelést.\n\nÜdvözlettel,\nNapsugár Kertészet ügyfélszolgálat"
+  },
+  "check": {
+    "green": true,
+    "problems": []
+  }
+}

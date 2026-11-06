@@ -1,0 +1,12 @@
+{"at":"2026-11-06T05:50:50.047Z","event":"node_start","node":"fetcher","seq":1}
+{"at":"2026-11-06T05:50:50.048Z","event":"node_end","node":"fetcher","status":"ok"}
+{"at":"2026-11-06T05:50:50.048Z","event":"step","node":"fetch","outcome":{"kind":"next","to":"triage"}}
+{"at":"2026-11-06T05:50:50.048Z","event":"node_start","node":"triager","seq":2}
+{"at":"2026-11-06T05:50:50.049Z","event":"node_end","node":"triager","status":"ok"}
+{"at":"2026-11-06T05:50:50.049Z","event":"step","node":"triage","outcome":{"kind":"next","to":"after_triage"}}
+{"at":"2026-11-06T05:50:50.049Z","event":"step","node":"after_triage","outcome":{"kind":"next","to":"check"}}
+{"at":"2026-11-06T05:50:50.049Z","event":"node_start","node":"checker","seq":3}
+{"at":"2026-11-06T05:50:50.050Z","event":"node_end","node":"checker","status":"ok"}
+{"at":"2026-11-06T05:50:50.050Z","event":"step","node":"check","outcome":{"kind":"next","to":"after_check"}}
+{"at":"2026-11-06T05:50:50.050Z","event":"step","node":"after_check","outcome":{"kind":"next","to":"end"}}
+{"at":"2026-11-06T05:50:50.050Z","event":"end","status":"clean"}

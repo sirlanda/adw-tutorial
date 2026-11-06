@@ -1,7 +1,0 @@
-{
-  "status": "max_reached",
-  "reason": "fixer: 0 javítási kör után még mindig piros a kapu",
-  "problems": [
-    "[error] body: reklamációnál kötelező a jogorvoslati mondat az aláírás előtt: 'Panaszával a lakóhelye szerinti békéltető testülethez is fordulhat.'"
-  ]
-}

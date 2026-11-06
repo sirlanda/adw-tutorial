@@ -1,0 +1,38 @@
+{
+  "ticket_id": "T-1005",
+  "execution_id": "01",
+  "created_at": "2026-11-06T05:51:39.456Z",
+  "updated_at": "2026-11-06T05:51:46.164Z",
+  "status": "clean",
+  "next": "end",
+  "iteration": 0,
+  "seq": 5,
+  "nodes": {
+    "fetcher": "ok",
+    "triager": "ok",
+    "summarizer": "ok",
+    "escalate": "ok"
+  },
+  "mail": {
+    "ticket_id": "T-1005",
+    "from": "horvath.laszlo@example.com",
+    "name": "Horváth László",
+    "subject": "Visszaküldés 20 nap után",
+    "received_at": "2026-11-05T13:15:00+01:00",
+    "body": "Tisztelt Ügyfélszolgálat!\n\nHúsz napja vettem Önöknél egy sövénynyíró ollót (NK-240288), de közben kaptam egyet ajándékba, így ez felesleges. Bontatlan, az eredeti dobozban van. Tudom, hogy 14 nap az elállás, de kérdezném, hogy ilyen esetben van-e mód a visszaküldésre?\n\nKöszönettel,\nHorváth László"
+  },
+  "triage": {
+    "route": "escalate",
+    "jev": {
+      "importance": 0.62,
+      "urgency": 0.5,
+      "deadline": "none",
+      "tone": "friendly",
+      "complexity": 1.37,
+      "support_level": "L2",
+      "support_level_confidence": 0.66
+    }
+  },
+  "summary": "Horváth László (T-1005, 2026-11-05) egy sövénynyíró ollót (NK-240288) vásárolt 20 napja, de ajándékba kapott egyet, így a vásárolt példány felesleges; a termék bontatlan, az eredeti dobozban van.\nAz ügyfél tudja, hogy az elállási határidő 14 nap, és azt kérdezi, van-e mód visszaküldésre ilyen esetben.\nDöntést igénylő kérdés (L2, üzleti): a 14 napos elállási határidőn túli, bontatlan termék visszaküldése elbírálható-e kivételként, és ha igen, milyen feltétellel.",
+  "handover": "Ügy: T-1005, futás: 01, státusz: running. Szint: L2. Összefoglaló: Horváth László (T-1005, 2026-11-05) egy sövénynyíró ollót (NK-240288) vásárolt 20 napja, de ajándékba kapott egyet, így a vásárolt példány felesleges; a termék bontatlan, az eredeti dobozban van.\nAz ügyfél tudja, hogy az elállási határidő 14 nap, és azt kérdezi, van-e mód visszaküldésre ilyen esetben.\nDöntést igénylő kérdés (L2, üzleti): a 14 napos elállási határidőn túli, bontatlan termék visszaküldése elbírálható-e kivételként, és ha igen, milyen feltétellel. Vázlat nem készült."
+}
