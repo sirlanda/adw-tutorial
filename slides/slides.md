@@ -387,6 +387,7 @@ layout: section
 ```md
 ---
 allowed-tools: Read, Glob, Grep
+model: sonnet
 ---
 # Válaszlevél írása
 Te a Napsugár Kertészet ügyfélszolgálatának munkatársa vagy.
@@ -635,7 +636,8 @@ support_level: choice("Ki oldja meg?", { L1, L2, L3 }),
 | kód (sablon) | ismert kérdésre kész válasz | 0 ms | 0 |
 | Jev, 6 kérdés | ítél: szint, hangnem, sürgősség, súly | 208 ms | ~0 |
 | haiku összefoglaló | három sor az átadó kollégának | 6 s | 0.006 USD |
-| writer (erős modell) | megírja a választ a tudásbázisból | 20 s | 0.18 USD |
+| writer (sonnet) | megírja a választ a tudásbázisból | 20 s | 0.18 USD |
+| fixer (opus) | a kapu hibáit javítja, a levél többi része marad | 20 s | 0.15 USD |
 
 <br>
 
@@ -647,9 +649,9 @@ support_level: choice("Ki oldja meg?", { L1, L2, L3 }),
 
 <br>
 
-- **Jev ítél, Haiku összefoglal, az erős modell ír.** Egy node, egy modell, egy cél.
+- **Jev ítél, Haiku összefoglal, Sonnet ír, Opus javít.** Egy node, egy modell, egy cél.
 - A hat levélből kettő nem is jut el a drága modellig, egy pedig ügynök nélkül megy ki.
-- A modell a prompt fájl frontmatterében (`model: haiku`), nem a kódban.
+- A modell a prompt fájl frontmatterében (`model: haiku | sonnet | opus`), nem a kódban.
 
 ---
 layout: section
