@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { AgentNode } from "../../engine/AgentNode";
 import { NodeOutputBaseSchema } from "../../engine/NodeOutput";
-import type { Failure } from "../../engine/Outcome";
+import type { Failure, Outcome } from "../../engine/Outcome";
 import type { ReplyContext } from "../ReplyContext";
 import { ReplySchema, type Mail, type Reply, type ReplyState } from "../state";
 
@@ -26,12 +26,15 @@ export class Fixer extends AgentNode<ReplyState, FixerInput, FixerOutput> {
   }
 
   protected input(state: ReplyState): FixerInput {
-    return { mail: state.mail!, draft: state.draft!, problems: state.check!.problems };
+    // A kapu hibái és az ember elutasító jegyzete ugyanazon a csatornán: problems[].
+    const human = state.approval?.decision === "rejected" && state.approval.note ? [`[human] jegyzet: ${state.approval.note}`] : [];
+    return { mail: state.mail!, draft: state.draft!, problems: [...state.check!.problems, ...human] };
   }
 
-  protected apply(state: ReplyState, out: FixerOutput): Failure | null {
+  protected apply(state: ReplyState, out: FixerOutput): Outcome | null {
     state.draft = out.reply;
     state.iteration += 1;
+    state.approval = undefined; // a jegyzet feldolgozva, a következő kör új döntést kér
     return null;
   }
 }

@@ -1,11 +1,11 @@
 {
   "status": "ok",
   "done": [
-    "[error] body: az aláírás elé bekerült a kötelező jogorvoslati mondat: 'Panaszával a lakóhelye szerinti békéltető testülethez is fordulhat.' A levél többi része nem változott, és továbbra is 150 szó alatt marad."
+    "[error] body: az aláírás elé, külön bekezdésbe beillesztettem a kötelező jogorvoslati mondatot: 'Panaszával a lakóhelye szerinti békéltető testülethez is fordulhat.' A levél többi része változatlan, a hossza kb. 114 szó (a korlát 150), tiltott szó nincs benne."
   ],
   "problems": [],
   "reply": {
-    "subject": "[T-1003] Az NK-240402 számú rendelése",
-    "body": "Kedves Nagy Gábor!\n\nElnézést kérünk, hogy korábbi leveleire nem kapott választ, és hogy az NK-240402 számú rendelése még nem érkezett meg. Értjük, mennyire bosszantó ez, főleg egy születésnapi ajándéknál.\n\nA szállítási idő a rendelés visszaigazolásától számítva 2–4 munkanap. A rendelés állapotát a visszaigazoló e-mailben kapott linken követheti.\n\nKonkrét szállítási napot sajnos nem ígérhetünk, ezért azt sem tudjuk megígérni, hogy a csomag holnapig megérkezik.\n\nA következő lépés: ügyét reklamációként kezeljük, és kollégánk 1 munkanapon belül jelentkezik a rendelés pontos állapotával és a megoldással. Ennek során a visszatérítési kérését is megvizsgáljuk.\n\nPanaszával a lakóhelye szerinti békéltető testülethez is fordulhat.\n\nÜdvözlettel,\nNapsugár Kertészet ügyfélszolgálat"
+    "subject": "[T-1003] Re: Hol a rendelésem? – NK-240402",
+    "body": "Kedves Nagy Gábor!\n\nElnézést kérünk, hogy az előző két levelére nem válaszoltunk, és hogy a rendelése még nem érkezett meg. Megértjük, mennyire bosszantó ez egy születésnapi ajándéknál.\n\nAz NK-240402 számú rendelését reklamációként kezeljük. Kollégánk kivizsgálja, hol tart a csomag, és 1 munkanapon belül válaszolunk Önnek a konkrét megoldással. A szokásos szállítási idő 2–4 munkanap, ezért az ügyét kiemelten vizsgáljuk.\n\nKonkrét kézbesítési napot nem ígérhetünk, így azt sem, hogy a csomag holnapig megérkezik. A rendelés állapotát addig is követheti a visszaigazoló e-mailben kapott linken.\n\nA visszatérítési kérését továbbítjuk a vezető kollégánknak. Ő dönt róla, és erről 3 munkanapon belül értesítést kap.\n\nPanaszával a lakóhelye szerinti békéltető testülethez is fordulhat.\n\nÜdvözlettel,\nNapsugár Kertészet ügyfélszolgálat"
   }
 }

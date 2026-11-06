@@ -2,6 +2,7 @@ import type { RunContext } from "../engine/RunContext";
 import type { Checker } from "../services/Checker";
 import type { Jev } from "../services/Jev";
 import type { Mailbox } from "../services/Mailbox";
+import type { Sender } from "../services/Sender";
 import type { Templates } from "../services/Templates";
 
 export interface Limits {
@@ -14,6 +15,7 @@ export interface ReplyContext extends RunContext {
   mailbox: Mailbox;
   checker: Checker;
   templates: Templates;
+  sender: Sender;
   jev: Jev;
   limits: Limits;
 }

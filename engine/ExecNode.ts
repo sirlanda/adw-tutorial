@@ -37,8 +37,8 @@ export abstract class ExecNode<
   /** A munka. Visszaadja az outputot, a step validálja. */
   protected abstract run(state: S, input: In): Promise<Out>;
 
-  /** Az egyetlen hely, ahol a validált output a state-be kerül. */
-  protected abstract apply(state: S, out: Out): Failure | null;
+  /** Az egyetlen hely, ahol a validált output a state-be kerül. null = tovább a `to` node-ra. */
+  protected abstract apply(state: S, out: Out): Outcome | null;
 
   async step(state: S): Promise<Outcome> {
     const blocked = this.guard(state);
@@ -74,8 +74,7 @@ export abstract class ExecNode<
 
     // Ha a node maga mondja, hogy elakadt, a futás is elakad; különben az apply dönt.
     if (out.status === "stuck") return stuck(out.stuck_reason ?? `${this.name}: stuck`);
-    const failure = this.apply(state, out);
-    return failure ?? next(this.to);
+    return this.apply(state, out) ?? next(this.to);
   }
 
   targets(): string[] {

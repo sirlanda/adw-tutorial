@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { ExecNode } from "../../engine/ExecNode";
 import { NodeOutputBaseSchema } from "../../engine/NodeOutput";
-import type { Failure } from "../../engine/Outcome";
+import type { Outcome } from "../../engine/Outcome";
 import type { ReplyContext } from "../ReplyContext";
 import type { Mail, Reply, ReplyState } from "../state";
 
@@ -33,7 +33,7 @@ export class CheckNode extends ExecNode<ReplyState, CheckInput, CheckOutput> {
     };
   }
 
-  protected apply(state: ReplyState, out: CheckOutput): Failure | null {
+  protected apply(state: ReplyState, out: CheckOutput): Outcome | null {
     state.check = { green: out.green, problems: out.problems };
     return null;
   }

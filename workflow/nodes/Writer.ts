@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { AgentNode } from "../../engine/AgentNode";
 import { NodeOutputBaseSchema } from "../../engine/NodeOutput";
-import type { Failure } from "../../engine/Outcome";
+import type { Outcome } from "../../engine/Outcome";
 import type { ReplyContext } from "../ReplyContext";
 import { ReplySchema, type Mail, type ReplyState } from "../state";
 import type { Triage } from "../triage";
@@ -25,7 +25,7 @@ export class Writer extends AgentNode<ReplyState, WriterInput, WriterOutput> {
     return { mail: state.mail!, triage: state.triage?.jev ?? null }; // a triage prior, nem parancs
   }
 
-  protected apply(state: ReplyState, out: WriterOutput): Failure | null {
+  protected apply(state: ReplyState, out: WriterOutput): Outcome | null {
     state.draft = out.reply;
     return null;
   }

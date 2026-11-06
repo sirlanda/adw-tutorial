@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { AgentNode } from "../../engine/AgentNode";
 import { NodeOutputBaseSchema } from "../../engine/NodeOutput";
-import type { Failure } from "../../engine/Outcome";
+import type { Outcome } from "../../engine/Outcome";
 import type { ReplyContext } from "../ReplyContext";
 import type { Mail, ReplyState } from "../state";
 import type { Triage } from "../triage";
@@ -24,7 +24,7 @@ export class Summarizer extends AgentNode<ReplyState, SummarizerInput, Summarize
     return { mail: state.mail!, triage: state.triage?.jev ?? null };
   }
 
-  protected apply(state: ReplyState, out: SummarizerOutput): Failure | null {
+  protected apply(state: ReplyState, out: SummarizerOutput): Outcome | null {
     state.summary = out.summary;
     return null;
   }

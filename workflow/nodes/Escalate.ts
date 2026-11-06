@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { ExecNode } from "../../engine/ExecNode";
 import { NodeOutputBaseSchema } from "../../engine/NodeOutput";
-import type { Failure } from "../../engine/Outcome";
+import type { Outcome } from "../../engine/Outcome";
 import type { ReplyContext } from "../ReplyContext";
 import type { ReplyState } from "../state";
 
@@ -41,7 +41,7 @@ export class Escalate extends ExecNode<ReplyState, EscalateInput, EscalateOutput
     return { status: "ok", done: [`átadva: ${input.level === "L3" ? "üzemeltetés/fejlesztés" : "ügyfélszolgálati vezető"}`], problems: input.problems, handover };
   }
 
-  protected apply(state: ReplyState, out: EscalateOutput): Failure | null {
+  protected apply(state: ReplyState, out: EscalateOutput): Outcome | null {
     state.handover = out.handover;
     return null;
   }

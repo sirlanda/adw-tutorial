@@ -1,16 +1,17 @@
 {
   "status": "issues",
   "done": [
-    "Elolvastam a 3-writer-input.json fájlt: a hangnem angry, a határidő today, a rendelésszám NK-240402",
-    "Elolvastam a hangnem.md, szabalyzat.md és faq.md fájlt",
-    "Megírtam a választ: elnézéskéréssel kezdődik, tartalmazza a rendelésszámot, a konkrét következő lépés a reklamáció 1 munkanapos válaszideje, nincs benne tiltott szó, kb. 115 szó"
+    "Elolvastam az inputot (T-1003, tone=angry, deadline=today) és a kb három fájlját",
+    "Megírtam a választ: elnézéskéréssel kezdődik, az NK-240402 rendelésszám benne van, a következő lépések konkrétak",
+    "Formát ellenőriztem: [T-1003] a tárgyban, megszólítás, előírt aláírás, kb. 115 szó, tiltott szó nincs benne"
   ],
   "problems": [
-    "[medium] reply.body: a tudásbázis nem mondja meg, hogyan kell visszatéríteni egy ki nem szállított, kártyával kifizetett rendelés árát; a válasz ezért csak annyit ír, hogy a kérést megvizsgáljuk, visszatérítést nem ígér",
-    "[low] reply.body: a rendelés tényleges állapotát a tudásbázisból nem lehet lekérdezni, és szállítási napot a szabályzat szerint nem ígérhetünk, így a holnapi határidőre nem tudunk választ adni"
+    "[medium] rendelés állapota: a tudásbázisban nincs adat az NK-240402 tényleges állapotáról, ezért a válasz csak kivizsgálást ígér 1 munkanapon belül, a reklamáció menete szerint",
+    "[medium] visszatérítés: a szabályzat nem rendezi, mi történik egy ki nem kézbesített, kifizetett rendelés visszatérítésével. A vitás esetre vonatkozó szabály szerint vezető kolléga dönt, 3 munkanapos értesítéssel; ezt ember ellenőrizze",
+    "[low] előző két levél: a tudásbázisból nem tudni, miért maradtak válasz nélkül. A válasz csak elnézést kér érte"
   ],
   "reply": {
-    "subject": "[T-1003] Az NK-240402 számú rendelése",
-    "body": "Kedves Nagy Gábor!\n\nElnézést kérünk, hogy korábbi leveleire nem kapott választ, és hogy az NK-240402 számú rendelése még nem érkezett meg. Értjük, mennyire bosszantó ez, főleg egy születésnapi ajándéknál.\n\nA szállítási idő a rendelés visszaigazolásától számítva 2–4 munkanap. A rendelés állapotát a visszaigazoló e-mailben kapott linken követheti.\n\nKonkrét szállítási napot sajnos nem ígérhetünk, ezért azt sem tudjuk megígérni, hogy a csomag holnapig megérkezik.\n\nA következő lépés: ügyét reklamációként kezeljük, és kollégánk 1 munkanapon belül jelentkezik a rendelés pontos állapotával és a megoldással. Ennek során a visszatérítési kérését is megvizsgáljuk.\n\nÜdvözlettel,\nNapsugár Kertészet ügyfélszolgálat"
+    "subject": "[T-1003] Re: Hol a rendelésem? – NK-240402",
+    "body": "Kedves Nagy Gábor!\n\nElnézést kérünk, hogy az előző két levelére nem válaszoltunk, és hogy a rendelése még nem érkezett meg. Megértjük, mennyire bosszantó ez egy születésnapi ajándéknál.\n\nAz NK-240402 számú rendelését reklamációként kezeljük. Kollégánk kivizsgálja, hol tart a csomag, és 1 munkanapon belül válaszolunk Önnek a konkrét megoldással. A szokásos szállítási idő 2–4 munkanap, ezért az ügyét kiemelten vizsgáljuk.\n\nKonkrét kézbesítési napot nem ígérhetünk, így azt sem, hogy a csomag holnapig megérkezik. A rendelés állapotát addig is követheti a visszaigazoló e-mailben kapott linken.\n\nA visszatérítési kérését továbbítjuk a vezető kollégánknak. Ő dönt róla, és erről 3 munkanapon belül értesítést kap.\n\nÜdvözlettel,\nNapsugár Kertészet ügyfélszolgálat"
   }
 }

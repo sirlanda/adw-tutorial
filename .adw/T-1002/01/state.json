@@ -1,18 +1,19 @@
 {
   "ticket_id": "T-1002",
   "execution_id": "01",
-  "created_at": "2026-11-06T05:52:19.813Z",
-  "updated_at": "2026-11-06T05:52:46.968Z",
-  "status": "clean",
-  "next": "end",
+  "created_at": "2026-11-06T05:54:25.238Z",
+  "updated_at": "2026-11-06T05:54:54.322Z",
+  "status": "waiting",
+  "next": "gate",
   "iteration": 1,
-  "seq": 7,
+  "seq": 8,
   "nodes": {
     "fetcher": "ok",
     "triager": "ok",
     "writer": "issues",
     "checker": "ok",
-    "fixer": "ok"
+    "fixer": "ok",
+    "propose": "ok"
   },
   "mail": {
     "ticket_id": "T-1002",
@@ -26,20 +27,21 @@
     "route": "write",
     "jev": {
       "importance": 0.99,
-      "urgency": 0.86,
+      "urgency": 0.85,
       "deadline": "none",
       "tone": "friendly",
-      "complexity": 1.34,
+      "complexity": 1.32,
       "support_level": "L1",
-      "support_level_confidence": 0.96
+      "support_level_confidence": 0.94
     }
   },
   "draft": {
-    "subject": "[T-1002] Elszáradt leander – NK-240317",
-    "body": "Kedves Szabó Péter!\n\nKöszönjük, hogy jelezte a leander problémáját (rendelésszám: NK-240317).\n\nÉlő növényeinkre az átvételtől számított 30 napos növénygaranciát vállalunk. Ha a növény ez idő alatt elpusztul, cseréljük, vagy a vételárat jóváírjuk. A garancia feltétele, hogy a növényt a címkén szereplő útmutató szerint gondozták.\n\nA következő lépés: kérjük, válaszlevélben küldjön fényképet a növényről és a címkéjéről. Ezek beérkezése után 1 munkanapon belül válaszolunk, és elindítjuk a cserét vagy a jóváírást.\n\nA gondozáshoz a növény címkéjén szereplő útmutató ad eligazítást.\n\nPanaszával a lakóhelye szerinti békéltető testülethez is fordulhat.\n\nÜdvözlettel,\nNapsugár Kertészet ügyfélszolgálat"
+    "subject": "Re: Elszáradt leander [T-1002]",
+    "body": "Kedves Szabó Péter!\n\nKöszönjük, hogy jelezte a leander problémáját (rendelésszám: NK-240317). Sajnáljuk, hogy a növény levelei megsárgultak.\n\nAz élő növényekre az átvételtől számított 30 napos garanciát vállalunk. Ha a növény ez idő alatt elpusztul, kicseréljük, vagy jóváírjuk a vételárát. A garancia feltétele, hogy a növényt a címkén szereplő útmutató szerint gondozták.\n\nKérjük, válaszlevélben küldjön fényképet a növényről és a címkéjéről. Ezek alapján kollégánk 1 munkanapon belül válaszol, és elindítja a cserét vagy a jóváírást. Ha az esetet a vezető kollégának kell eldöntenie, a döntésről 3 munkanapon belül értesítjük.\n\nA gondozáshoz addig is a címkén szereplő útmutatót ajánljuk.\n\nPanaszával a lakóhelye szerinti békéltető testülethez is fordulhat.\n\nÜdvözlettel,\nNapsugár Kertészet ügyfélszolgálat"
   },
   "check": {
     "green": true,
     "problems": []
-  }
+  },
+  "proposal": "/home/tyufi/proj/tutorial/adw-tutorial/outbox/T-1002.md"
 }

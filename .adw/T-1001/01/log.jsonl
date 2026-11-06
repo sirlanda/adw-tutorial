@@ -1,12 +1,15 @@
-{"at":"2026-11-06T05:50:50.047Z","event":"node_start","node":"fetcher","seq":1}
-{"at":"2026-11-06T05:50:50.048Z","event":"node_end","node":"fetcher","status":"ok"}
-{"at":"2026-11-06T05:50:50.048Z","event":"step","node":"fetch","outcome":{"kind":"next","to":"triage"}}
-{"at":"2026-11-06T05:50:50.048Z","event":"node_start","node":"triager","seq":2}
-{"at":"2026-11-06T05:50:50.049Z","event":"node_end","node":"triager","status":"ok"}
-{"at":"2026-11-06T05:50:50.049Z","event":"step","node":"triage","outcome":{"kind":"next","to":"after_triage"}}
-{"at":"2026-11-06T05:50:50.049Z","event":"step","node":"after_triage","outcome":{"kind":"next","to":"check"}}
-{"at":"2026-11-06T05:50:50.049Z","event":"node_start","node":"checker","seq":3}
-{"at":"2026-11-06T05:50:50.050Z","event":"node_end","node":"checker","status":"ok"}
-{"at":"2026-11-06T05:50:50.050Z","event":"step","node":"check","outcome":{"kind":"next","to":"after_check"}}
-{"at":"2026-11-06T05:50:50.050Z","event":"step","node":"after_check","outcome":{"kind":"next","to":"end"}}
-{"at":"2026-11-06T05:50:50.050Z","event":"end","status":"clean"}
+{"at":"2026-11-06T05:54:25.172Z","event":"node_start","node":"fetcher","seq":1}
+{"at":"2026-11-06T05:54:25.173Z","event":"node_end","node":"fetcher","status":"ok"}
+{"at":"2026-11-06T05:54:25.173Z","event":"step","node":"fetch","outcome":{"kind":"next","to":"triage"}}
+{"at":"2026-11-06T05:54:25.173Z","event":"node_start","node":"triager","seq":2}
+{"at":"2026-11-06T05:54:25.174Z","event":"node_end","node":"triager","status":"ok"}
+{"at":"2026-11-06T05:54:25.174Z","event":"step","node":"triage","outcome":{"kind":"next","to":"after_triage"}}
+{"at":"2026-11-06T05:54:25.174Z","event":"step","node":"after_triage","outcome":{"kind":"next","to":"check"}}
+{"at":"2026-11-06T05:54:25.174Z","event":"node_start","node":"checker","seq":3}
+{"at":"2026-11-06T05:54:25.175Z","event":"node_end","node":"checker","status":"ok"}
+{"at":"2026-11-06T05:54:25.175Z","event":"step","node":"check","outcome":{"kind":"next","to":"after_check"}}
+{"at":"2026-11-06T05:54:25.175Z","event":"step","node":"after_check","outcome":{"kind":"next","to":"gate"}}
+{"at":"2026-11-06T05:54:25.175Z","event":"step","node":"gate","outcome":{"kind":"next","to":"propose"}}
+{"at":"2026-11-06T05:54:25.175Z","event":"node_start","node":"propose","seq":4}
+{"at":"2026-11-06T05:54:25.176Z","event":"node_end","node":"propose","status":"ok"}
+{"at":"2026-11-06T05:54:25.176Z","event":"step","node":"propose","outcome":{"kind":"waiting","at":"gate","reason":"emberi jóváhagyásra vár"}}

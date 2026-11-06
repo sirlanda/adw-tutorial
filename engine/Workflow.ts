@@ -64,6 +64,12 @@ export class Workflow<S extends EngineState> {
 
       if (outcome.kind === "next") {
         state.next = outcome.to;
+      } else if (outcome.kind === "waiting") {
+        // Emberi döntésre várunk: a state tudja, hol folytassa, a folyamat kiléphet.
+        state.status = "waiting";
+        state.next = outcome.at;
+        this.save(state);
+        return;
       } else {
         state.status = outcome.kind;
         state.stuck_reason = outcome.reason;

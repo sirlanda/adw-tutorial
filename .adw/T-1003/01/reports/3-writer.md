@@ -2,16 +2,17 @@
 node: writer
 seq: 3
 status: issues
-duration_s: 19.4
+duration_s: 20.9
 ---
 
 ## Elvégezve
 
-- Elolvastam a 3-writer-input.json fájlt: a hangnem angry, a határidő today, a rendelésszám NK-240402
-- Elolvastam a hangnem.md, szabalyzat.md és faq.md fájlt
-- Megírtam a választ: elnézéskéréssel kezdődik, tartalmazza a rendelésszámot, a konkrét következő lépés a reklamáció 1 munkanapos válaszideje, nincs benne tiltott szó, kb. 115 szó
+- Elolvastam az inputot (T-1003, tone=angry, deadline=today) és a kb három fájlját
+- Megírtam a választ: elnézéskéréssel kezdődik, az NK-240402 rendelésszám benne van, a következő lépések konkrétak
+- Formát ellenőriztem: [T-1003] a tárgyban, megszólítás, előírt aláírás, kb. 115 szó, tiltott szó nincs benne
 
 ## Problémák
 
-- [medium] reply.body: a tudásbázis nem mondja meg, hogyan kell visszatéríteni egy ki nem szállított, kártyával kifizetett rendelés árát; a válasz ezért csak annyit ír, hogy a kérést megvizsgáljuk, visszatérítést nem ígér
-- [low] reply.body: a rendelés tényleges állapotát a tudásbázisból nem lehet lekérdezni, és szállítási napot a szabályzat szerint nem ígérhetünk, így a holnapi határidőre nem tudunk választ adni
+- [medium] rendelés állapota: a tudásbázisban nincs adat az NK-240402 tényleges állapotáról, ezért a válasz csak kivizsgálást ígér 1 munkanapon belül, a reklamáció menete szerint
+- [medium] visszatérítés: a szabályzat nem rendezi, mi történik egy ki nem kézbesített, kifizetett rendelés visszatérítésével. A vitás esetre vonatkozó szabály szerint vezető kolléga dönt, 3 munkanapos értesítéssel; ezt ember ellenőrizze
+- [low] előző két levél: a tudásbázisból nem tudni, miért maradtak válasz nélkül. A válasz csak elnézést kér érte

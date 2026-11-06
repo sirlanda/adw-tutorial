@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { ExecNode } from "../../engine/ExecNode";
 import { NodeOutputBaseSchema } from "../../engine/NodeOutput";
-import type { Failure } from "../../engine/Outcome";
+import type { Outcome } from "../../engine/Outcome";
 import type { ReplyContext } from "../ReplyContext";
 import { ReplySchema, type Mail, type ReplyState } from "../state";
 import { JEV_THRESHOLDS, triageQuestions, TriageSchema } from "../triage";
@@ -57,7 +57,7 @@ export class Triager extends ExecNode<ReplyState, { mail: Mail }, TriagerOutput>
     return { status: "ok", done, problems: [], route, template: null, triage };
   }
 
-  protected apply(state: ReplyState, out: TriagerOutput): Failure | null {
+  protected apply(state: ReplyState, out: TriagerOutput): Outcome | null {
     state.triage = { route: out.route, jev: out.triage };
     if (out.template) state.draft = out.template;
     return null;

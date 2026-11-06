@@ -24,6 +24,9 @@ export const ReplyStateSchema = EngineStateSchema.extend({
   triage: z.object({ route: z.enum(["template", "write", "escalate"]), jev: TriageSchema.nullable() }).optional(),
   summary: z.string().optional(), // az olcsó LLM átadó összefoglalója (L2/L3)
   handover: z.string().optional(), // az escalate node átadó sora
+  proposal: z.string().optional(), // outbox/<ticket>.md, jóváhagyásra vár
+  approval: z.object({ decision: z.enum(["approved", "rejected"]), note: z.string().optional(), at: z.string() }).optional(),
+  sent: z.string().optional(), // sent/<ticket>.md
 });
 
 export type Mail = z.infer<typeof MailSchema>;

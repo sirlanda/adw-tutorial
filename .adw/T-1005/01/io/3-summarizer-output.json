@@ -1,9 +1,9 @@
 {
   "status": "ok",
   "done": [
-    "Beolvastam a T-1005 input fájlt (levél + gépi triázs).",
-    "Összefoglaltam a kérést, a konkrét tényeket és a döntendő kérdést három sorban."
+    "Beolvastam a T-1005 input fájlt (levél és gépi triázs).",
+    "Összefoglaltam az ügyfél kérését, a konkrét tényeket és a másik csapatnak szóló kérdést."
   ],
   "problems": [],
-  "summary": "Horváth László (T-1005, 2026-11-05) egy sövénynyíró ollót (NK-240288) vásárolt 20 napja, de ajándékba kapott egyet, így a vásárolt példány felesleges; a termék bontatlan, az eredeti dobozban van.\nAz ügyfél tudja, hogy az elállási határidő 14 nap, és azt kérdezi, van-e mód visszaküldésre ilyen esetben.\nDöntést igénylő kérdés (L2, üzleti): a 14 napos elállási határidőn túli, bontatlan termék visszaküldése elbírálható-e kivételként, és ha igen, milyen feltétellel."
+  "summary": "Horváth László (T-1005) egy sövénynyíró ollót (NK-240288) vett 20 napja, de ajándékba kapott egy másikat, így a vásárolt, bontatlan, eredeti dobozos példányt visszaküldené. Tudja, hogy az elállási határidő 14 nap, és ezt el is ismeri.\nKérdés a másik csapatnak (üzleti döntés): van-e mód a 14 napos határidőn túli visszaküldésre bontatlan termék esetén, és ha igen, milyen feltételekkel?\nAz ügyfél barátságos hangnemben ír, a levélben nincs határidő (L2, üzleti döntés)."
 }

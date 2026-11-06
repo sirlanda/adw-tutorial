@@ -2,17 +2,16 @@
 node: writer
 seq: 3
 status: issues
-duration_s: 17.5
+duration_s: 18.8
 ---
 
 ## Elvégezve
 
-- Elolvastam az input fájlt (hangnem: friendly, céges nagytételes érdeklődés, nincs benne rendelésszám)
-- Elolvastam a hangnem.md, szabalyzat.md és faq.md fájlt
-- Megírtam a választ a GYIK nagyobb mennyiségre, szállításra és céges számlára vonatkozó pontjai alapján, kb. 115 szóban, tiltott szavak nélkül
-- Nem ígértem konkrét szállítási napot (szabályzat), a november 25-i határidőt az egyedi ajánlatot egyeztető kollégához irányítottam
+- Elolvastam a T-1006 input fájlt (barátságos hangnem, céges nagytételes érdeklődés, nincs rendelésszám)
+- Átnéztem a hangnem.md, szabalyzat.md és faq.md tartalmát
+- Megírtam a választ a GYIK 'Nagyobb mennyiség', 'Szállítás' és 'Fizetés' pontjai alapján, tiltott szavak és konkrét szállítási nap ígérete nélkül, kb. 115 szóban
 
 ## Problémák
 
-- [minor] reply.body: a 200 db smaragd tuja (80–100 cm) készletéről a tudásbázisban nincs adat, ezért a válasz ezt a kérdést nyitva hagyja, és a következő lépésként az egyedi ajánlatot egyeztető kollégát nevezi meg
-- [minor] reply.body: a november 25-i határidő teljesíthetőségét a szabályzat szerint nem lehet megígérni, ezért az egyeztetéskor kell tisztázni
+- [medium] készlet: a tudásbázisból nem derül ki, van-e 200 db 80–100 cm-es smaragd tuja készleten; a válasz az egyedi ajánlat keretében történő egyeztetésre utal
+- [medium] határidő: a november 25-i érkezést a szabályzat szerint nem ígérhetjük meg; a válasz a 2–4 munkanapos szállítási időt és a kolléga egyeztetését írja le

@@ -7,7 +7,7 @@ export const EngineStateSchema = z.object({
   execution_id: z.string(),
   created_at: z.string(),
   updated_at: z.string(),
-  status: z.enum(["running", "clean", "stuck", "max_reached"]),
+  status: z.enum(["running", "waiting", "clean", "stuck", "max_reached"]),
   next: z.string(),
   stuck_reason: z.string().optional(),
   iteration: z.number().int().default(0), // hányadik javítási kör (később)

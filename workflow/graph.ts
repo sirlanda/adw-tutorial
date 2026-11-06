@@ -5,6 +5,8 @@ import { CheckNode } from "./nodes/CheckNode";
 import { Escalate } from "./nodes/Escalate";
 import { Fetcher } from "./nodes/Fetcher";
 import { Fixer } from "./nodes/Fixer";
+import { Propose } from "./nodes/Propose";
+import { Send } from "./nodes/Send";
 import { Summarizer } from "./nodes/Summarizer";
 import { Triager } from "./nodes/Triager";
 import { Writer } from "./nodes/Writer";
@@ -24,8 +26,14 @@ export function replyWorkflow(ctx: ReplyContext): WorkflowDef<ReplyState> {
     { label: "ügynök ír", when: (s) => s.triage?.route === "write", to: "write" },
   ]);
   const afterCheck = new DecisionNode<ReplyState>("after_check", [
-    { label: "zöld", when: (s) => s.check?.green === true, to: "end" },
+    { label: "zöld", when: (s) => s.check?.green === true, to: "gate" },
     { label: "piros", when: (s) => s.check?.green === false, to: "fix" },
+  ]);
+  // Near the loop: a döntés az emberé, a csatorna ugyanaz a state, mint a node-ok között.
+  const gate = new DecisionNode<ReplyState>("gate", [
+    { label: "jóváhagyva", when: (s) => s.approval?.decision === "approved", to: "send" },
+    { label: "elutasítva", when: (s) => s.approval?.decision === "rejected", to: "fix" },
+    { label: "döntésre vár", when: () => true, to: "propose" },
   ]);
   return {
     nodes: [
@@ -37,6 +45,9 @@ export function replyWorkflow(ctx: ReplyContext): WorkflowDef<ReplyState> {
       new CheckNode(ctx, "after_check"),
       afterCheck,
       new Fixer(ctx, "check"),
+      gate,
+      new Propose(ctx, "gate"),
+      new Send(ctx, "end"),
       new Escalate(ctx, "end"),
       new EndNode("end"),
     ],

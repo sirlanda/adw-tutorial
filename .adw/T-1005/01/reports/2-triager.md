@@ -7,7 +7,7 @@ duration_s: 0.2
 
 ## Elvégezve
 
-- Jev: L2 (0.66), hangnem friendly, sürgősség 0.5, súly 0.6
+- Jev: L2 (0.64), hangnem friendly, sürgősség 0.5, súly 0.6
 - emberhez megy, ügynök nem ír választ
 
 ## Problémák

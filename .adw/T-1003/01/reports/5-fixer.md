@@ -2,12 +2,12 @@
 node: fixer
 seq: 5
 status: ok
-duration_s: 9.2
+duration_s: 14.0
 ---
 
 ## Elvégezve
 
-- [error] body: az aláírás elé bekerült a kötelező jogorvoslati mondat: 'Panaszával a lakóhelye szerinti békéltető testülethez is fordulhat.' A levél többi része nem változott, és továbbra is 150 szó alatt marad.
+- [error] body: az aláírás elé, külön bekezdésbe beillesztettem a kötelező jogorvoslati mondatot: 'Panaszával a lakóhelye szerinti békéltető testülethez is fordulhat.' A levél többi része változatlan, a hossza kb. 114 szó (a korlát 150), tiltott szó nincs benne.
 
 ## Problémák
 

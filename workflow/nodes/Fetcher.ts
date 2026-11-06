@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { ExecNode } from "../../engine/ExecNode";
 import { NodeOutputBaseSchema } from "../../engine/NodeOutput";
-import type { Failure } from "../../engine/Outcome";
+import type { Outcome } from "../../engine/Outcome";
 import type { ReplyContext } from "../ReplyContext";
 import { MailSchema, type ReplyState } from "../state";
 
@@ -26,7 +26,7 @@ export class Fetcher extends ExecNode<ReplyState, { ticket_id: string }, Fetcher
     return { status: "ok", done: [`letöltve: ${mail.subject} (${mail.from})`], problems: [], mail };
   }
 
-  protected apply(state: ReplyState, out: FetcherOutput): Failure | null {
+  protected apply(state: ReplyState, out: FetcherOutput): Outcome | null {
     state.mail = out.mail;
     return null;
   }
