@@ -838,6 +838,37 @@ for (const ticket of fresh)
 </div>
 
 ---
+
+# Miért nem elég egy skill?
+
+A skill egy prompt fájl, amit az ügynök elolvas. Kell is: a 4. lépés prompt fájlja pontosan ez.
+De minden, ami a skillben van, az ügynök kontextusában él, és az ügynök dönti el, mit kezd vele.
+
+<div class="text-sm">
+
+| Kérdés | Skill | ADW | Lépés |
+| --- | --- | --- | --- |
+| Ki dönt, merre megy a folyamat? | az ügynök, a szöveg alapján | `DecisionNode`, kódban | 1, 3 |
+| Mi az igazság a futásról? | a beszélgetés, és elvész | `state.json`, `--resume` | 1, 2 |
+| Mennyit lát egyszerre? | mindent, egy kontextusban | egy node, egy input fájl, friss folyamat | 4 |
+| Mi állítja meg a rossz választ? | a saját ítélete | `Checker`: olyan szabály is, amit nem tudhat | 3, 5 |
+| Hányszor próbálkozhat? | ameddig a kontextus bírja | `guard()`, `LIMITS.maxFix` | 5 |
+| Mibe kerül? | minden levél a drága modellnek | kód, Jev, haiku, csak a maradék az ügynöknek | 6 |
+| Mikor kérdez embert? | ha a szöveg szerint kell, és észreveszi | `waiting`, a kapu | 7 |
+| Ki indítja, ki küldi? | az ember | `hook.ts`, `autoSend` | 8 |
+| Visszajátszható, mérhető? | nem | `io/`, `log.jsonl`, replay | 2, 4 |
+
+</div>
+
+<br>
+
+<div class="text-center">
+
+A skill az ügynök eszköze, az ADW az üzemeltetőé. **A skill az ADW-ben egy node promptja.**
+
+</div>
+
+---
 layout: section
 ---
 
