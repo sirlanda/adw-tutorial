@@ -53,4 +53,5 @@ kódban; az ügynök ír, javít, összefoglal.
   a `sent/` mappába, a "letöltés" az `inbox/` olvasása.
 - D6. Replay: a `.adw/` nyom a branch része, `ADW_AGENT=replay` a rögzített válaszokat adja
   vissza (ügynök és Jev), a demo így determinisztikus. Élő hívás a tartalék.
-- D7. A slide deck külön mappában (`../adw-slides/`), a diffeket `scripts/snippets.sh` adja.
+- D7. A slide deck a `slides/` mappában, minden branchen változatlanul, a `justfile`-lal
+  együtt a lánc aljáról. A branch-páronkénti diffeket `scripts/snippets.sh` adja (segédanyag).

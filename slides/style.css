@@ -1,0 +1,11 @@
+/* Sűrű kódos diák: kisebb kódbetű, szorosabb táblázat. */
+.slidev-layout {
+  --slidev-code-font-size: 0.64rem;
+  --slidev-code-line-height: 1.35;
+  --slidev-code-padding: 0.6rem;
+}
+.slidev-layout pre { margin: 0.4rem 0; }
+.slidev-layout table { font-size: 0.72rem; line-height: 1.25; }
+.slidev-layout th, .slidev-layout td { padding: 0.15rem 0.5rem; }
+.slidev-layout h1 { margin-bottom: 0.6rem; }
+.slidev-layout td:first-child { white-space: nowrap; }

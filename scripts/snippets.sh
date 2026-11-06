@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # A slide-okhoz: branch-páronként a kód-diff és a rögzített futás fájljai a
-# ../adw-slides/snippets/<n>/ mappába. A slide ezekből importál (<<< @/snippets/...).
+# slides/snippets/<n>/ mappába. Segédanyag a slide-ok írásához, nem a repo része.
 set -euo pipefail
 cd "$(dirname "$0")/.."
-out="${1:-../adw-slides/snippets}"
+out="${1:-slides/snippets}"
 branches=(main 01-workflow 02-typed-io 03-exec-node 04-agent-node 05-loop-limits 06-triage 07-near-the-loop 08-off-the-loop)
 for i in $(seq 1 8); do
   prev="${branches[$((i-1))]}"; cur="${branches[$i]}"
