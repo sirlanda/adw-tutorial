@@ -150,10 +150,17 @@ Az ügynök csak a `kb/`-t és a saját input fájlját olvassa.
 
 <br>
 
-```
-fetch → triage → write → check → gate → send
-                   ↑       │ piros
-                  fix ←────┘           (escalate, ha elakad vagy kimerül a korlát)
+```mermaid {theme: 'base', scale: 0.6, flowchart: {nodeSpacing: 18, rankSpacing: 36, padding: 6}, themeVariables: {primaryColor: '#0b3566', primaryTextColor: '#e8eef7', primaryBorderColor: '#6fb3e8', lineColor: '#a9b9d1', edgeLabelBackground: '#05224a', fontFamily: 'inherit', fontSize: '16px'}}
+flowchart LR
+  fetch --> triage --> write --> check --> gate --> send
+  check -- piros --> fix --> check
+  gate -- döntésre vár --> propose["propose, ember dönt"] --> gate
+  triage -- L2 / L3 --> escalate
+  fix -. elakad, kimerül a korlát .-> escalate
+  classDef agent fill:#3a2410,stroke:#f28c28,color:#ffd9b3
+  classDef human fill:#1a3a5c,stroke:#ffffff,stroke-dasharray: 4 3,color:#ffffff
+  class write,fix agent
+  class propose human
 ```
 
 Minden lépés egy branch, minden branch az előzőre épül. Az LLM a 4. lépésben jelenik meg.
