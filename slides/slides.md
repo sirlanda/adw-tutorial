@@ -24,6 +24,13 @@ Nyolc lépés egy működő ADW-ig
 
 <div class="pt-8 text-sm opacity-70">IT nap · 2026. november 7.</div>
 
+<img v-click src="/jarjar.webp" alt="Jar Jar Binks" class="absolute bottom-6 right-10 h-72" />
+
+<!--
+1. Az ADW lényege, hogy nem a terméket gyártjuk, hanem a terméket gyártó gyártósort építjük meg.
+2. Gyár-gyártó - Úgy hangzik, mint Jar Jar Binks - és pont annyi ész is kell hozzá...
+-->
+
 ---
 
 # Van esélyünk az AI-jal szemben?
