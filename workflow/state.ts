@@ -1,25 +1,26 @@
-import type { RunState } from "../engine/Workflow";
+import { z } from "zod";
+import { EngineStateSchema } from "../engine/state";
 
-export interface Mail {
-  ticket_id: string;
-  from: string;
-  name: string;
-  subject: string;
-  received_at: string;
-  body: string;
-}
+export const MailSchema = z.object({
+  ticket_id: z.string(),
+  from: z.string(),
+  name: z.string(),
+  subject: z.string(),
+  received_at: z.string(),
+  body: z.string(),
+});
 
-export interface Reply {
-  subject: string;
-  body: string;
-}
+export const ReplySchema = z.object({
+  subject: z.string(),
+  body: z.string(),
+});
 
 // A válaszlevél-workflow állapota: az engine mezői plusz a saját adataink.
-export interface ReplyState extends RunState {
-  mail?: Mail;
-  draft?: Reply;
-}
+export const ReplyStateSchema = EngineStateSchema.extend({
+  mail: MailSchema.optional(),
+  draft: ReplySchema.optional(),
+});
 
-export function initialState(ticketId: string, executionId: string, start: string): ReplyState {
-  return { ticket_id: ticketId, execution_id: executionId, status: "running", next: start };
-}
+export type Mail = z.infer<typeof MailSchema>;
+export type Reply = z.infer<typeof ReplySchema>;
+export type ReplyState = z.infer<typeof ReplyStateSchema>;

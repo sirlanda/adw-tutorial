@@ -1,17 +1,9 @@
 import { EndNode } from "./EndNode";
 import type { Node } from "./Node";
+import type { EngineState } from "./state";
 import type { Workspace } from "./Workspace";
 
-// Minden workflow-state ennyit biztosan tartalmaz; a többit a workflow adja hozzá.
-export interface RunState {
-  ticket_id: string;
-  execution_id: string;
-  status: "running" | "clean" | "stuck" | "max_reached";
-  next: string;
-  stuck_reason?: string;
-}
-
-export interface WorkflowDef<S extends RunState> {
+export interface WorkflowDef<S extends EngineState> {
   nodes: Node<S>[];
   start: string;
   end: string;
@@ -24,7 +16,7 @@ export interface RunOptions {
 
 // A gráf és az EGYETLEN ciklus. Olvassa state.next-et, lépteti a node-ot, alkalmazza az
 // Outcome-ot, menti a state-et, naplóz, és ismétel a záró node-ig.
-export class Workflow<S extends RunState> {
+export class Workflow<S extends EngineState> {
   private readonly nodes = new Map<string, Node<S>>();
 
   constructor(
@@ -47,13 +39,18 @@ export class Workflow<S extends RunState> {
     }
   }
 
+  private save(state: S): void {
+    state.updated_at = new Date().toISOString();
+    this.ws.save(state);
+  }
+
   async run(state: S, opts: RunOptions = {}): Promise<void> {
     while (true) {
       const node = this.nodes.get(state.next);
       if (!node) throw new Error(`ismeretlen node: ${state.next}`);
       if (node instanceof EndNode) {
         state.status = "clean";
-        this.ws.save(state);
+        this.save(state);
         this.ws.log({ event: "end", status: state.status });
         return;
       }
@@ -68,7 +65,7 @@ export class Workflow<S extends RunState> {
         state.stuck_reason = outcome.reason;
         state.next = this.def.end;
       }
-      this.ws.save(state);
+      this.save(state);
 
       if (opts.stopAfter === node.id) {
         this.ws.log({ event: "stopped", after: node.id });
