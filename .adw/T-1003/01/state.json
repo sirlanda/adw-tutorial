@@ -1,0 +1,32 @@
+{
+  "ticket_id": "T-1003",
+  "execution_id": "01",
+  "created_at": "2026-11-06T05:47:22.646Z",
+  "updated_at": "2026-11-06T05:47:59.354Z",
+  "status": "clean",
+  "next": "end",
+  "iteration": 1,
+  "seq": 6,
+  "nodes": {
+    "fetcher": "ok",
+    "writer": "issues",
+    "checker": "ok",
+    "fixer": "ok"
+  },
+  "mail": {
+    "ticket_id": "T-1003",
+    "from": "nagy.gabor@example.com",
+    "name": "Nagy Gábor",
+    "subject": "HARMADSZOR ÍROK!!! Hol a rendelésem?",
+    "received_at": "2026-11-05T10:05:00+01:00",
+    "body": "Ez már a harmadik levelem, az előző kettőre választ sem kaptam!!!\n\nOktóber 27-én rendeltem (NK-240402), ki is fizettem kártyával, és azóta SEMMI. Se csomag, se értesítés. Holnap lenne a születésnapi ajándék, amire kellett volna.\n\nHa holnapig nem jön meg, visszakérem a pénzem és mindenhol leírom, hogy milyen cég ez.\n\nNagy Gábor"
+  },
+  "draft": {
+    "subject": "[T-1003] Az NK-240402 számú rendelése",
+    "body": "Kedves Nagy Gábor!\n\nElnézést kérünk, hogy az előző leveleire nem válaszoltunk, és hogy az NK-240402 számú rendelése még nem érkezett meg. Megértjük, mennyire bosszantó ez, főleg egy születésnapi ajándéknál.\n\nA szállítási idő általában a rendelés visszaigazolásától számítva 2–4 munkanap, Ön ennél jóval hosszabb ideje vár. A rendelés állapotát a visszaigazoló e-mailben kapott linken is követheti.\n\nAz NK-240402 számú rendelést reklamációként kezeljük: kivizsgáljuk, hol tart a csomag, és 1 munkanapon belül jelentkezünk. Konkrét kézbesítési napot sajnos nem tudunk ígérni.\n\nA visszatérítési kérését rögzítettük. Erről a vizsgálat eredménye alapján a vezető kollégánk dönt, és a döntésről 3 munkanapon belül értesítjük.\n\nPanaszával a lakóhelye szerinti békéltető testülethez is fordulhat.\n\nÜdvözlettel,\nNapsugár Kertészet ügyfélszolgálat"
+  },
+  "check": {
+    "green": true,
+    "problems": []
+  }
+}

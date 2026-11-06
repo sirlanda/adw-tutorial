@@ -5,7 +5,7 @@ import { Workflow } from "./engine/Workflow";
 import { Workspace } from "./engine/Workspace";
 import { Checker } from "./services/Checker";
 import { Mailbox } from "./services/Mailbox";
-import { replyWorkflow } from "./workflow/graph";
+import { LIMITS, replyWorkflow } from "./workflow/graph";
 import { ReplyStateSchema, type ReplyState } from "./workflow/state";
 
 // bun adw.ts <ticket> [--resume] [--stop-after <node>]
@@ -25,7 +25,7 @@ const agent =
   process.env.ADW_AGENT === "replay"
     ? new ReplayAgent(new Workspace(root, ticketId, process.env.ADW_REPLAY_FROM ?? "01").dir)
     : new ClaudeAgent();
-const def = replyWorkflow({ root, ws, agent, mailbox: new Mailbox(root), checker: new Checker() });
+const def = replyWorkflow({ root, ws, agent, mailbox: new Mailbox(root), checker: new Checker(), limits: LIMITS });
 // Folytatáskor a state.json-t is a séma ellenőrzi: sérült fájlra nem indulunk el.
 const state: ReplyState = resume
   ? ReplyStateSchema.parse(ws.load())

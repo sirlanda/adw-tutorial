@@ -7,7 +7,7 @@ duration_s: 0.0
 
 ## Elvégezve
 
-- letöltve: Elszáradt leander (szabo.peter@example.com)
+- letöltve: HARMADSZOR ÍROK!!! Hol a rendelésem? (nagy.gabor@example.com)
 
 ## Problémák
 

@@ -26,6 +26,11 @@ export abstract class ExecNode<
     super(id);
   }
 
+  /** Korlát-ellenőrzés a munka ELŐTT: ha egy limit elfogyott, a node el sem indul. */
+  protected guard(_state: S): Failure | null {
+    return null;
+  }
+
   /** Mit kap a node a state-ből. Ez kerül az input fájlba, más forrása nincs. */
   protected abstract input(state: S): In;
 
@@ -36,6 +41,11 @@ export abstract class ExecNode<
   protected abstract apply(state: S, out: Out): Failure | null;
 
   async step(state: S): Promise<Outcome> {
+    const blocked = this.guard(state);
+    if (blocked) {
+      this.ctx.ws.log({ event: "guard", node: this.name, failure: blocked });
+      return blocked;
+    }
     const files = new NodeFiles(this.ctx.ws, state.seq, this.name);
     state.nodes[this.name] = "running";
     this.ctx.ws.save(state);

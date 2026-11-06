@@ -1,6 +1,6 @@
 ---
 node: checker
-seq: 3
+seq: 5
 status: ok
 duration_s: 0.0
 ---

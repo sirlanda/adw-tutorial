@@ -1,0 +1,15 @@
+{
+  "status": "ok",
+  "done": [
+    "letöltve: HARMADSZOR ÍROK!!! Hol a rendelésem? (nagy.gabor@example.com)"
+  ],
+  "problems": [],
+  "mail": {
+    "ticket_id": "T-1003",
+    "from": "nagy.gabor@example.com",
+    "name": "Nagy Gábor",
+    "subject": "HARMADSZOR ÍROK!!! Hol a rendelésem?",
+    "received_at": "2026-11-05T10:05:00+01:00",
+    "body": "Ez már a harmadik levelem, az előző kettőre választ sem kaptam!!!\n\nOktóber 27-én rendeltem (NK-240402), ki is fizettem kártyával, és azóta SEMMI. Se csomag, se értesítés. Holnap lenne a születésnapi ajándék, amire kellett volna.\n\nHa holnapig nem jön meg, visszakérem a pénzem és mindenhol leírom, hogy milyen cég ez.\n\nNagy Gábor"
+  }
+}

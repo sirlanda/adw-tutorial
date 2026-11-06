@@ -20,6 +20,7 @@ export const ReplyStateSchema = EngineStateSchema.extend({
   mail: MailSchema.optional(),
   draft: ReplySchema.optional(),
   check: z.object({ green: z.boolean(), problems: z.array(z.string()) }).optional(),
+  handover: z.string().optional(), // az escalate node átadó sora
 });
 
 export type Mail = z.infer<typeof MailSchema>;

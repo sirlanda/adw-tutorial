@@ -1,0 +1,17 @@
+{
+  "status": "issues",
+  "done": [
+    "Elolvastam a beérkezett levelet (T-1003, NK-240402, késik a csomag, a vásárló visszatérítést helyez kilátásba)",
+    "Elolvastam a hangnem.md, szabalyzat.md és faq.md fájlokat",
+    "Megírtam a választ: először elnézéskérés, utána a szállítási idő a GYIK szerint, a reklamáció menete és a következő lépések; 150 szó alatt, tiltott szavak nélkül, a rendelésszámmal"
+  ],
+  "problems": [
+    "[medium] tudásbázis: a meg nem érkezett, kártyával kifizetett rendelés visszatérítéséről nincs szabály (az elállási szabály csak átvett termékre vonatkozik), ezért a választ a reklamáció menetére és a vezető kolléga döntésére építettem",
+    "[low] tudásbázis: a rendelés tényleges állapota és a két korábbi, megválaszolatlan levél nem ellenőrizhető; a válasz kivizsgálást ígér, kézbesítési napot nem",
+    "[low] ügy: a vásárló holnapra kéri a csomagot; konkrét kézbesítési napot a szabályzat szerint nem ígérhetünk"
+  ],
+  "reply": {
+    "subject": "[T-1003] Az NK-240402 számú rendelése",
+    "body": "Kedves Nagy Gábor!\n\nElnézést kérünk, hogy az előző leveleire nem válaszoltunk, és hogy az NK-240402 számú rendelése még nem érkezett meg. Megértjük, mennyire bosszantó ez, főleg egy születésnapi ajándéknál.\n\nA szállítási idő általában a rendelés visszaigazolásától számítva 2–4 munkanap, Ön ennél jóval hosszabb ideje vár. A rendelés állapotát a visszaigazoló e-mailben kapott linken is követheti.\n\nAz NK-240402 számú rendelést reklamációként kezeljük: kivizsgáljuk, hol tart a csomag, és 1 munkanapon belül jelentkezünk. Konkrét kézbesítési napot sajnos nem tudunk ígérni.\n\nA visszatérítési kérését rögzítettük. Erről a vizsgálat eredménye alapján a vezető kollégánk dönt, és a döntésről 3 munkanapon belül értesítjük.\n\nÜdvözlettel,\nNapsugár Kertészet ügyfélszolgálat"
+  }
+}
