@@ -914,6 +914,12 @@ A mai hat levélnél: 7 hívás, 2 javítási kör, 2 emberi döntés, 0 elakad�
 
 ---
 
+# A négy KPI a futás nyomából jön
+
+<img src="/tac-kpis.png" alt="4 KPI: Size, Attempts, Streak, Presence" class="mx-auto rounded" style="max-height: 430px" />
+
+---
+
 # A tizenkét leverage point a lépésekre vetítve
 
 <div class="grid grid-cols-2 gap-6 text-sm">
@@ -942,6 +948,12 @@ A mai hat levélnél: 7 hívás, 2 javítási kör, 2 emberi döntés, 0 elakad�
 
 </div>
 </div>
+
+---
+
+# A tizenkét leverage point a lépésekre vetítve
+
+<img src="/tac-leverage.png" alt="12 leverage point" class="mx-auto rounded" style="max-height: 430px" />
 
 ---
 
