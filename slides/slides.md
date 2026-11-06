@@ -879,6 +879,8 @@ sok mindenre jó, de ő fogja. Az ADW egy gyár: a folyamat, a kapu, a számlál
 
 A skill az ügynök eszköze, az ADW az üzemeltetőé. A skill az ADW-ben egy node promptja.
 
+Mindent meg lehet csinálni `skill` segítségével is (kérdezd McGywer-t), de nem hatékony és nem konzisztens.
+
 Ikonok: game-icons.net, Lorc és Delapouite, CC BY 3.0.
 -->
 
