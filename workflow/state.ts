@@ -19,6 +19,7 @@ export const ReplySchema = z.object({
 export const ReplyStateSchema = EngineStateSchema.extend({
   mail: MailSchema.optional(),
   draft: ReplySchema.optional(),
+  check: z.object({ green: z.boolean(), problems: z.array(z.string()) }).optional(),
 });
 
 export type Mail = z.infer<typeof MailSchema>;

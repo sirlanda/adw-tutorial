@@ -1,7 +1,11 @@
-{"at":"2026-11-06T05:34:14.326Z","event":"node_start","node":"fetcher","seq":1}
-{"at":"2026-11-06T05:34:14.327Z","event":"node_end","node":"fetcher","status":"ok"}
-{"at":"2026-11-06T05:34:14.327Z","event":"step","node":"fetch","outcome":{"kind":"next","to":"draft"}}
-{"at":"2026-11-06T05:34:14.327Z","event":"node_start","node":"drafter","seq":2}
-{"at":"2026-11-06T05:34:14.327Z","event":"node_end","node":"drafter","status":"ok"}
-{"at":"2026-11-06T05:34:14.327Z","event":"step","node":"draft","outcome":{"kind":"next","to":"end"}}
-{"at":"2026-11-06T05:34:14.327Z","event":"end","status":"clean"}
+{"at":"2026-11-06T05:35:40.825Z","event":"node_start","node":"fetcher","seq":1}
+{"at":"2026-11-06T05:35:40.826Z","event":"node_end","node":"fetcher","status":"ok"}
+{"at":"2026-11-06T05:35:40.826Z","event":"step","node":"fetch","outcome":{"kind":"next","to":"draft"}}
+{"at":"2026-11-06T05:35:40.826Z","event":"node_start","node":"drafter","seq":2}
+{"at":"2026-11-06T05:35:40.826Z","event":"node_end","node":"drafter","status":"ok"}
+{"at":"2026-11-06T05:35:40.826Z","event":"step","node":"draft","outcome":{"kind":"next","to":"check"}}
+{"at":"2026-11-06T05:35:40.826Z","event":"node_start","node":"checker","seq":3}
+{"at":"2026-11-06T05:35:40.827Z","event":"node_end","node":"checker","status":"issues"}
+{"at":"2026-11-06T05:35:40.827Z","event":"step","node":"check","outcome":{"kind":"next","to":"after_check"}}
+{"at":"2026-11-06T05:35:40.827Z","event":"step","node":"after_check","outcome":{"kind":"stuck","reason":"after_check: egyik ág sem igaz (zöld)"}}
+{"at":"2026-11-06T05:35:40.827Z","event":"end","status":"stuck"}

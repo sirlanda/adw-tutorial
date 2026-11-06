@@ -49,7 +49,8 @@ export class Workflow<S extends EngineState> {
       const node = this.nodes.get(state.next);
       if (!node) throw new Error(`ismeretlen node: ${state.next}`);
       if (node instanceof EndNode) {
-        state.status = "clean";
+        // Elakadás után is ide érünk: a hiba státusza marad, csak a sima futás lesz clean.
+        if (state.status === "running") state.status = "clean";
         this.save(state);
         this.ws.log({ event: "end", status: state.status });
         return;
