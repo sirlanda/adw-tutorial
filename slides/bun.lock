@@ -5,6 +5,7 @@
     "": {
       "name": "adw-slides",
       "devDependencies": {
+        "@shikijs/transformers": "^4.6.0",
         "@slidev/cli": "^53.1.0",
         "@slidev/theme-default": "^0.25.0",
         "playwright-chromium": "^1.65.0",
@@ -252,6 +253,8 @@
     "@shikijs/primitive": ["@shikijs/primitive@4.6.0", "", { "dependencies": { "@shikijs/types": "4.6.0", "@shikijs/vscode-textmate": "^10.1.0", "@types/hast": "^3.0.5" } }, "sha512-c54+TQEo9ToqgfL/AU8FpjnV09+GA9Oa7M5ROkkXteZfp5XzpAJGXjjvZQFQioJOwm/w/6Z3lIzQstAkl8coag=="],
 
     "@shikijs/themes": ["@shikijs/themes@4.6.0", "", { "dependencies": { "@shikijs/types": "4.6.0" } }, "sha512-qHAVAs80RiGD+IRuH9G+JPDOEc9A/kHsng4EzCUCwB9bLzW6Z0y9WETh2YyCcADJBmfrIaJ1Jp7KBNP6FHkgtQ=="],
+
+    "@shikijs/transformers": ["@shikijs/transformers@4.6.0", "", { "dependencies": { "@shikijs/core": "4.6.0", "@shikijs/types": "4.6.0" } }, "sha512-oZ28gYlPOYspv6AD74lCb14AAJugSY/+nJxRWjH42yDbdLAdftVU/PP36tOhb435Sfop2UGWcRGXY7HLLveKCg=="],
 
     "@shikijs/twoslash": ["@shikijs/twoslash@4.6.0", "", { "dependencies": { "@shikijs/core": "4.6.0", "@shikijs/types": "4.6.0", "twoslash": "^0.3.9" }, "peerDependencies": { "typescript": ">=5.5.0" } }, "sha512-bmHGZwJZWHCCEYpMc8bc4mizSGqjXYx2H5MVavQ78pDAZqqiRubiZzAWicJPemuLypKHSbQbPFMYMP/iWy/Sqw=="],
 

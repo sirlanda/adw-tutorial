@@ -112,3 +112,10 @@
   line-height: 1.2;
   text-shadow: 0 0 14px var(--tigra-navy), 0 0 6px var(--tigra-navy), 0 0 2px var(--tigra-navy);
 }
+
+/* Diff-jelölés a kódban: zöld az új sor, piros a törölt (Shiki notation diff) */
+.slidev-layout .slidev-code .line.diff { display: inline-block; width: 100%; margin: 0 -0.6rem; padding: 0 0.6rem; }
+.slidev-layout .slidev-code .line.diff.add { background-color: rgba(80, 200, 120, 0.18); box-shadow: inset 3px 0 0 #50c878; }
+.slidev-layout .slidev-code .line.diff.remove { background-color: rgba(230, 80, 80, 0.18); box-shadow: inset 3px 0 0 #e65050; opacity: 0.75; }
+.slidev-layout .slidev-code .line.diff.add::before { content: "+"; position: absolute; margin-left: -0.5rem; color: #50c878; }
+.slidev-layout .slidev-code .line.diff.remove::before { content: "-"; position: absolute; margin-left: -0.5rem; color: #e65050; }

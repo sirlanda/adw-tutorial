@@ -741,7 +741,30 @@ layout: section
 <div class="grid grid-cols-2 gap-4 text-xs">
 <div>
 
-```ts {all|1|3-6|7-12}
+````md magic-move
+```ts
+// workflow/graph.ts a 07-ben: a döntés az emberé
+const is = (v) => (s) => s.approval?.decision === v;
+const gate = new DecisionNode<ReplyState>("gate", [
+  { label: "jóváhagyva", when: is("approved"), to: "send" },
+  { label: "elutasítva", when: is("rejected"), to: "fix" },
+  { label: "döntésre vár", when: () => true, to: "propose" },
+]);
+```
+```ts
+// workflow/graph.ts a 08-ban: az alacsony kockázat kódban megy ki
+const is = (v) => (s) => s.approval?.decision === v;
+const gate = new DecisionNode<ReplyState>("gate", [
+  { label: "automatikus", when: autoSend, to: "send" },
+  { label: "jóváhagyva", when: is("approved"), to: "send" },
+  { label: "elutasítva", when: is("rejected"), to: "fix" },
+  { label: "döntésre vár", when: () => true, to: "propose" },
+]);
+```
+````
+
+```ts
+// workflow/policy.ts, ÚJ fájl: egy helyen, számokkal
 const AUTO_SEND = { minLevelConfidence: 0.8, maxImportance: 1.5 };
 
 function autoSend(s: ReplyState): boolean {
@@ -754,22 +777,6 @@ function autoSend(s: ReplyState): boolean {
     && jev.tone !== "angry"
     && jev.importance <= AUTO_SEND.maxImportance;
 }
-```
-
-```ts
-const gate = new DecisionNode<ReplyState>("gate", [
-  { label: "automatikus", when: autoSend, to: "send" },  // ÚJ
-  { label: "jóváhagyva", ... },
-  { label: "elutasítva", ... },
-  { label: "döntésre vár", ... },
-]);
-```
-
-```ts
-// hook.ts: állapotmentes tick az inbox/ és a .adw/ fölött
-const fresh = tickets.filter((t) => !existsSync(adwDir(t)));
-for (const ticket of fresh)
-  Bun.spawnSync(["bun", "adw.ts", ticket]);  // soros, lock alatt
 ```
 
 </div>
@@ -788,8 +795,11 @@ bun hook.ts --once          # élőben 97 s, replay 2 s
 | T-1005 | escalate | L2 | 1 | 0 | átadva (L2) |
 | T-1006 | write | L2, bizonytalan | 1 | 0 | jóváhagyásra vár |
 
-```
-6 ügy, 7 ügynökhívás, 2 automatikusan elküldve, 2 emberi döntésre vár
+```ts
+// hook.ts, ÚJ fájl: állapotmentes tick az inbox/ és a .adw/ fölött
+const fresh = tickets.filter((t) => !existsSync(adwDir(t)));
+for (const ticket of fresh)
+  Bun.spawnSync(["bun", "adw.ts", ticket]);  // soros, lock alatt
 ```
 
 - Az ember csak a kockázatos ügyeknél van ott
