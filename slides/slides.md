@@ -940,20 +940,13 @@ A mai hat levélnél: 7 hívás, 2 javítási kör, 2 emberi döntés, 0 elakad�
 <img src="/tac-leverage.png" alt="12 leverage point" class="mx-auto rounded" style="max-height: 430px" />
 
 <!--
-1. Context: az ügynök friss folyamatban csak az input fájlt és a kb/-t látja, se többet, se kevesebbet (4).
-
+1. Context: az ügynök friss folyamatban csak az input fájlt és a kb/-t látja, se többet, se kevesebbet (4). Context-engineering nem halt meg, hanem egyre fontosabb!
 2. Models: a feladathoz a modell: Jev ítél, Haiku összefoglal, Sonnet ír, Opus javít (6).
-
-3. Prompts: a prompt fájl lépésenkénti eljárás, változókkal és kényszerített sémával, nem chat (4).
-
+3. Prompts: a prompt fájl lépésenkénti eljárás, változókkal és kényszerített sémával, nem chat (4). Prompt-engineering nem halt meg, hanem egyre fontosabb!
 4. Tools: allowlist Read, Glob, Grep, tiltva a web és a bash, a kulcsok kiszűrve a gyerekfolyamatból (4).
-
 5. stdout: minden node-ról riport és átirat, és az ügynök a kapu hibáiból tanul a következő körben (2, 3, 5).
-
 6. Architecture: gráf és egyetlen ciklus, a külvilág a services mögött, semmi meglepetés (1, 3).
-
 7. Types: Zod séma a node-ok közt, Choice és Score a Jev-ből, ami nem fér a sémába, a parse-nál bukik (2, 6).
-
 8. Plans: a gráf maga a terv, a döntés és a korlát benne van, nem a promptban (1, 5).
 
 9. Documentation: a kb/ az ügynök dokumentációja, azon kívül nem tud semmit, és ez szándékos (4).
@@ -1005,13 +998,13 @@ A mai hat levélnél: 7 hívás, 2 javítási kör, 2 emberi döntés, 0 elakad�
 
 **Cél: dark factory**
 
-- út: *in-the-loop* (1–6) ≫ *near-the-loop* (7) ≫ *out-of-the-loop* (8)
+- út: *in-the-loop* ≫ *near-the-loop* ≫ *out-of-the-loop*
 - út: lépésről lépésre, egyszerre egy koncepció
 
 **Cél: én üzemeltetem**
 
 - út: az erőforrások legalább fele az *agentic layer*-re megy
-- a kapu, a korlát, a triage: ez a réteg
+- a kapu, a korlát, a triage, a promptok, stb.
 
 </div>
 <div>
@@ -1031,12 +1024,6 @@ A mai hat levélnél: 7 hívás, 2 javítási kör, 2 emberi döntés, 0 elakad�
 </div>
 
 <br>
-
-<div class="text-center text-lg">
-
-**Az ügynök alkot, a TypeScript dönt.**
-
-</div>
 
 ---
 layout: center
