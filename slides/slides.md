@@ -841,10 +841,8 @@ for (const ticket of fresh)
 
 # Miért nem elég egy skill?
 
-A skill egy prompt fájl, amit az ügynök elolvas. Kell is: a 4. lépés prompt fájlja pontosan ez.
-De minden, ami a skillben van, az ügynök kontextusában él, és az ügynök dönti el, mit kezd vele.
-
 <div class="text-sm">
+<v-clicks>
 
 | Kérdés | Skill | ADW | Lépés |
 | --- | --- | --- | --- |
@@ -858,15 +856,31 @@ De minden, ami a skillben van, az ügynök kontextusában él, és az ügynök d
 | Ki indítja, ki küldi? | az ember | `hook.ts`, `autoSend` | 8 |
 | Visszajátszható, mérhető? | nem | `io/`, `log.jsonl`, replay | 2, 4 |
 
+</v-clicks>
 </div>
 
-<br>
-
-<div class="text-center">
-
-A skill az ügynök eszköze, az ADW az üzemeltetőé. **A skill az ADW-ben egy node promptja.**
-
+<div v-click class="grid grid-cols-2 gap-8 pt-6 text-center">
+<div>
+<img src="/skill.svg" class="h-28 mx-auto" alt="svájci bicska" />
+<div class="pt-2 text-lg">Skill</div>
 </div>
+<div>
+<img src="/adw.svg" class="h-28 mx-auto" alt="gyár" />
+<div class="pt-2 text-lg">ADW</div>
+</div>
+</div>
+
+<!--
+A skill egy prompt fájl, amit az ügynök elolvas. Kell is: a 4. lépés prompt fájlja pontosan ez.
+De minden, ami a skillben van, az ügynök kontextusában él, és az ügynök dönti el, mit kezd vele.
+
+A táblázat soronként jön. A végén a két kép: a skill egy multitool, egy eszköz az ügynök kezében,
+sok mindenre jó, de ő fogja. Az ADW egy gyár: a folyamat, a kapu, a számláló, a kiszállítás kódban.
+
+A skill az ügynök eszköze, az ADW az üzemeltetőé. A skill az ADW-ben egy node promptja.
+
+Ikonok: game-icons.net, Lorc és Delapouite, CC BY 3.0.
+-->
 
 ---
 layout: section
