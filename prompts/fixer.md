@@ -1,5 +1,6 @@
 ---
 allowed-tools: Read, Glob, Grep
+model: opus
 ---
 # Válaszlevél javítása
 
