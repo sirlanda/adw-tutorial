@@ -8,86 +8,36 @@ Playwright, registry, sync) nem.
 Vezérelv a toolkit P1 elve: **az ügynök alkot, a TypeScript dönt.** Minden lépés ezt
 az elvet erősíti egy újabb oldalról.
 
-## 1. Munkafolyamat modellezés
+## A megvalósítás
 
-- Koncepció: a workflow egy gráf (node-ok id szerint) és egyetlen ciklus. A ciklus
-  olvassa `state.next`-et, lépteti a node-ot, alkalmazza az `Outcome`-ot, menti az
-  állapotot, ismétel a záró node-ig.
-- Kulcs: a node soha nem írja `state.next`-et, csak `{ kind: "next", to }`-t ad vissza.
-  Az állapot egy `state.json`, ami a teljes igazság (P2), ezért a futás bármikor
-  megszakítható és folytatható.
-- Tananyag lépés: két-három ScriptNode, egy EndNode, egy loop, egy JSON állapotfájl.
-  Még nincs LLM.
+Egy git repo, lépésenként egy branch, minden branch az előzőre épül. A példa: a fiktív
+Napsugár Kertészet ügyfélszolgálata, hat beérkező levél (`inbox/`), tudásbázis (`kb/`), a
+válasz az `outbox/`-ba (jóváhagyásra) vagy a `sent/`-be (elküldve) kerül.
 
-## 2. Nyílt, típusos kommunikáció
+```bash
+bun install
+bun adw.ts T-1002                      # egy levél feldolgozása, élő claude hívással
+ADW_AGENT=replay bun adw.ts T-1002     # ugyanez a rögzített futásból (.adw/T-1002/01), LLM nélkül
+bun adw.ts T-1006 --status | --approve | --reject "jegyzet"   # 07-től
+bun hook.ts --once [--all]             # 08-tól: az egész inbox, --all: újra, replay-hez
+```
 
-- Koncepció: minden node JSON inputot olvas fájlból és egy Zod sémával validált JSON
-  választ ad (P4). Az input fájl az egyetlen igazságforrás, a riport a validált
-  válaszból generálódik, nem az ügynök írja.
-- Kulcs: `io/<seq>-<name>-{input,output}.json`, minden output séma egy közös alapot
-  bővít (`status`, `done[]`, `problems[]`).
-- Tananyag lépés: az 1. lépés node-jai fájlon keresztül beszélnek, séma validálással.
-  Még mindig nincs LLM.
+Minden futás nyoma: `.adw/<ticket>/<futás>/` (`state.json`, `log.jsonl`, `io/`, `reports/`,
+`logs/`, `jev/`). A `01` futás minden branchen a rögzített, a replay ebből olvas.
 
-## 3. Determinisztikus node-ok készítése
+| Branch | Koncepció | Ami bekerül |
+| --- | --- | --- |
+| `01-workflow` | gráf és egy ciklus, a state fájl az igazság | `Outcome`, `Node`, `ScriptNode`, `EndNode`, `Workflow.run`, `Workspace`, `--resume`, `--stop-after` |
+| `02-typed-io` | nyílt, típusos szerződés a node-ok között | Zod `EngineStateSchema`, `NodeOutputBaseSchema`, `ExecNode` (input, run, apply), `io/` és `reports/` fájlok |
+| `03-exec-node` | determinisztikus munka és döntés, külvilág a services mögött | `Mailbox`, `Checker` (6 szabály), `DecisionNode`, a kapu: piros = elakadás |
+| `04-agent-node` | az ügynök ott, ahol ítélet kell: friss folyamat, prompt fájl, séma, egy retry | `Agent`, `ClaudeAgent`, `ReplayAgent`, `Prompt`, `AgentNode`, `prompts/writer.md`, `systemprompt.md` |
+| `05-loop-limits` | ciklus, de a számláló és a határ a kódban | `guard()`, `LIMITS.maxFix`, `Fixer`, `Escalate` failure node, a jogi szabály a kapuban |
+| `06-triage` | olcsótól a drágáig: kód, Jev, olcsó LLM, csak a maradék az ügynöknek | `Templates`, `Jev` (6 párhuzamos kérdés), `Triager`, `Summarizer` (haiku), `JEV_THRESHOLDS` |
+| `07-near-the-loop` | magától indul, kidolgoz, éles műveletet csak jóváhagyás után | `waiting` kimenet, `gate`, `Propose`, `Send`, `Sender`, `--approve`, `--reject` |
+| `08-off-the-loop` | a kapu kódban dönt, a poller indít és küld | `autoSend` szabály, `RunLock`, `hook.ts` és a záró táblázat |
 
-- Koncepció: ExecNode. Nehéz, de determinisztikus lépés (kinyerés, tesztfuttatás, git
-  művelet), ami logot és riportot ír, és `Failure`-t adhat vissza.
-- Kulcs: a külvilág (git, npm, tesztfuttató) egy `services/` réteg mögött van (P5),
-  a node csak a service-t hívja.
-- Tananyag lépés: egy "futtasd a teszteket és írd ki az eredményt" ExecNode és egy
-  DecisionNode, ami zöld/piros alapján ágazik el.
-
-## 4. Ügynök node-ok bevezetése
-
-- Koncepció: AgentNode. Egy futás = egy headless CLI folyamat, friss kontextussal (P3).
-  A prompt egy fájl `{{változókkal}}`, a válasz formáját JSON séma kényszeríti, egy
-  újrapróbálás a hibával kiegészített prompttal, második hiba = stuck.
-- Kulcs: a template metódus (`guard`, `input`, `vars`, `apply`) elválasztja a
-  gépezetet a tartalomtól. Az ügynök csak ott kap szerepet, ahol ítélet kell.
-- Tananyag lépés: egyetlen AgentNode (pl. "diagnosztizáld a piros futást"), a
-  3. lépés DecisionNode-ja ide ágazik.
-
-## 5. Ciklusok és korlátok
-
-- Koncepció: a visszacsatolás (implement, teszt, javít) ciklus, de a számláló és a
-  határ (`LIMITS`, `iteration`) a TypeScript-ben él, sosem az ügynök memóriájában.
-- Kulcs: `max_reached` és `stuck` kimenetek, egy deklarált failure node, ahová a loop
-  automatikusan irányít. A failure node hibája nem pörög, a végére megy.
-- Tananyag lépés: a 4. lépés ciklussá zárása iterációs limittel és failure node-dal.
-
-## 6. Triage (kód, Jev, olcsó LLM)
-
-- Koncepció: a drága ügynök elé olcsóbb szűrőket teszünk, sorrendben: kód (szabály),
-  Jev (típusos ítélet, Choice/Noul/Score), olcsó LLM. Az ügynök csak a maradékot kapja,
-  a triage eredményét priorként az inputjában.
-- Kulcs: ha minden hiba "mechanikus", az ügynök ki is marad. Jev kikapcsolva vagy hibázik:
-  minden az ügynökhöz megy, a futás nem áll meg.
-- Tananyag lépés: egy triage ExecNode a 4. lépés AgentNode-ja elé.
-
-## 7. "Near the loop" működés és kommunikáció
-
-- Koncepció: a workflow magától indul és nem kér engedélyt előre. Kidolgozza a
-  megoldást (branch, commit, riport), de éles műveletet (merge, push, ticket zárás)
-  nem végez. Ha kész, jóváhagyást kér, és az ember döntése alapján lép tovább.
-- Kulcs: a döntési pont egy DecisionNode a workflow végén, ami `approval` állapotot
-  vár. A kérés és a válasz ugyanaz a típusos csatorna, mint a node-ok között
-  (JSON fájl vagy ticket komment), a futás `--resume`-mal folytatódik a válasz után.
-  Elutasításkor az emberi jegyzet `should_fix` inputként megy egy új iterációba.
-- Tananyag lépés: az 5. lépés ciklusa után egy "javaslat kész, jóváhagyod?" állapot,
-  egy jóváhagyó parancs és a folytatás.
-
-## 8. "Off the loop" működés
-
-- Koncepció: nincs jóváhagyási pont. Egy állapotmentes poller (hook) figyel egy külső
-  rendszert (ticket státusz), indít, és az éles műveletet is maga végzi (merge, lezárás).
-  Minden tick a külső státuszból és a `.adw/` fából vezeti le, mit tegyen, ezért
-  bármikor újraindítható.
-- Kulcs: az ember csak a státuszváltással kommunikál. Egy futás egy repón (lock, P7),
-  soros feldolgozás. A 7. lépés jóváhagyó DecisionNode-ja itt a kódban eldöntött
-  feltétel (zöld gate + reviewer ok) lesz.
-- Tananyag lépés: egy minimális poller egy JSON-alapú "ticket" tábla fölött, ami a
-  7. lépés workflow-ját indítja és jóváhagyás nélkül zárja le.
+Vezérelv: **az ügynök alkot, a TypeScript dönt.** Útvonal, számláló, korlát, küldés mind
+kódban; az ügynök ír, javít, összefoglal.
 
 ## Döntések
 
@@ -99,14 +49,8 @@ az elvet erősíti egy újabb oldalról.
 - D4. "Near the loop" = automatikus indulás, kidolgozott megoldás, éles művelet csak
   jóváhagyás után. "Off the loop" = jóváhagyás nélkül, a gate dönt.
 
-## Nyitott
-
-- Q1. Célfeladat. Nem fejlesztőknek is érthető üzleti feladat kell. Jelöltek:
-  - O1. Ügyfélszolgálati válaszlevél (javaslat): fiktív webshop, beérkező e-mail,
-    tudásbázis fájlok. Gate: kódban ellenőrzött szabályok (ügyszám, tiltott ígéret,
-    hossz, nyelv). Ügynök: válasz írása, piros gate diagnózisa. Triage: sablonkérdés
-    kódból, Jev kategória és sürgősség. Near the loop: operátor hagyja jóvá a küldést.
-    Off the loop: inbox poller, alacsony kockázatú kategória automatikusan megy.
-    A "küldés" a tananyagban fájl mozgatása `sent/` mappába.
-  - O2. Fordítás glosszáriummal: gate placeholderek, számok, glosszárium; lektor hagy jóvá.
-  - O3. Számlaellenőrzés: a gate természetes, de az ügynöki ítélet gyenge, elvetve.
+- D5. Célfeladat: ügyfélszolgálati válaszlevél (fiktív kertészet). A "küldés" fájlmozgatás
+  a `sent/` mappába, a "letöltés" az `inbox/` olvasása.
+- D6. Replay: a `.adw/` nyom a branch része, `ADW_AGENT=replay` a rögzített válaszokat adja
+  vissza (ügynök és Jev), a demo így determinisztikus. Élő hívás a tartalék.
+- D7. A slide deck külön mappában (`../adw-slides/`), a diffeket `scripts/snippets.sh` adja.
