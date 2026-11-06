@@ -1,0 +1,3 @@
+node_modules/
+.env
+# a .adw/ nyom szándékosan a repo része: a demo a rögzített futásokat játssza vissza
