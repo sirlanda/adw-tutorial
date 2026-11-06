@@ -1,0 +1,3 @@
+# A Slidev slides.md frontmatter-blokkjait (---\nlayout: …\n---) a prettier üres sorral elrontja:
+# diaválasztóvá válnak. A mermaid fence opcióit ({theme: …}) is átírná.
+slides/slides.md

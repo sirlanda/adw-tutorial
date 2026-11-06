@@ -1,0 +1,12 @@
+# A Slidev slides.md dia-frontmattereit (---\nlayout: …\n---) a markdownlint setext-címsornak
+# látja, és az MD022 --fix üres sort szúr a --- után: a blokkból külön dia lesz.
+# A conform temp-fájlra (.conform.*.slides.md) futtatja a --fix-et, ezért az ignores nem elég:
+# a két szabály projekt-szinten ki van kapcsolva.
+config:
+  MD003: false # heading-style (setext/atx)
+  MD022: false # blanks-around-headings
+ignores:
+  - slides/slides.md
+  - node_modules
+  - slides/node_modules
+  - .adw
