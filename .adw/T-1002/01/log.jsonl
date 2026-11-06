@@ -1,0 +1,4 @@
+{"at":"2026-11-06T05:32:49.403Z","event":"step","node":"fetch","outcome":{"kind":"next","to":"draft"}}
+{"at":"2026-11-06T05:32:49.404Z","event":"stopped","after":"fetch"}
+{"at":"2026-11-06T05:32:49.412Z","event":"step","node":"draft","outcome":{"kind":"next","to":"end"}}
+{"at":"2026-11-06T05:32:49.412Z","event":"end","status":"clean"}
