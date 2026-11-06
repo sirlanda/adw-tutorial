@@ -15,6 +15,9 @@ transition: slide-left
 mdc: true
 ---
 
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+
 # Agentic Development Workflow
 
 Nyolc lépés egy működő ADW-ig
@@ -815,7 +818,7 @@ bun hook.ts --once          # élőben 97 s, replay 2 s
 ```
 
 | ticket | út | Jev | hívás | iter | eredmény |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | T-1001 | template | - | 0 | 0 | **elküldve automatikusan** |
 | T-1002 | write | L1, friendly | 2 | 1 | **elküldve automatikusan** |
 | T-1003 | write | L1, angry | 2 | 1 | jóváhagyásra vár |
@@ -896,12 +899,30 @@ layout: section
 
 # A négy KPI a futás nyomából jön
 
-| KPI | Mit mér | Honnan | Melyik lépés |
-| --- | --- | --- | --- |
-| **Size** | mekkora munka megy felügyelet nélkül | node-ok egy futásban, levelek egy tickben | 1, 8 |
-| **Attempts** | hányszor kell nekifutni (cél: egy) | `iteration` a state-ben, retry a naplóban | 4, 5 |
-| **Streak** | hány sikeres futás egymás után | `clean` futások sora a hook naplójában | 7, 8 |
-| **Presence** | mennyit kell mellette ülni (cél: nulla) | `approval` döntések / összes futás | 7, 8 |
+<img src="/tac-kpis.png" alt="4 KPI: Size, Attempts, Streak, Presence" class="mx-auto rounded" style="max-height: 430px" />
+
+<!--
+Size: mekkora munka megy felügyelet nélkül. Nálunk: hány node fut le egy futásban, hány levél egy tickben.
+
+Attempts: hányszor kell nekifutni, a cél az egy. Nálunk: az iteration a state-ben, a retry a naplóban.
+
+Streak: hány sikeres futás egymás után. Nálunk: a clean futások sora a hook naplójában.
+
+Presence: mennyit kell mellette ülni, a cél a nulla. Nálunk: az approval döntések aránya az összes futáshoz.
+
+Egymásra épülnek: Size nő, Attempts egyre tart, Streak nő, és ez viszi a Presence-t nullára.
+-->
+
+---
+
+# A négy KPI a futás nyomából jön
+
+| KPI | Honnan | Melyik lépés |
+| --- | --- | --- |
+| **Size** | node-ok egy futásban, levelek egy tickben | 1, 8 |
+| **Attempts** | `iteration` a state-ben, retry a naplóban | 4, 5 |
+| **Streak** | `clean` futások sora a hook naplójában | 7, 8 |
+| **Presence** | `approval` döntések / összes futás | 7, 8 |
 
 <br>
 
@@ -914,9 +935,35 @@ A mai hat levélnél: 7 hívás, 2 javítási kör, 2 emberi döntés, 0 elakad�
 
 ---
 
-# A négy KPI a futás nyomából jön
+# A tizenkét leverage point a lépésekre vetítve
 
-<img src="/tac-kpis.png" alt="4 KPI: Size, Attempts, Streak, Presence" class="mx-auto rounded" style="max-height: 430px" />
+<img src="/tac-leverage.png" alt="12 leverage point" class="mx-auto rounded" style="max-height: 430px" />
+
+<!--
+1. Context: az ügynök friss folyamatban csak az input fájlt és a kb/-t látja, se többet, se kevesebbet (4).
+
+2. Models: a feladathoz a modell: Jev ítél, Haiku összefoglal, Sonnet ír, Opus javít (6).
+
+3. Prompts: a prompt fájl lépésenkénti eljárás, változókkal és kényszerített sémával, nem chat (4).
+
+4. Tools: allowlist Read, Glob, Grep, tiltva a web és a bash, a kulcsok kiszűrve a gyerekfolyamatból (4).
+
+5. stdout: minden node-ról riport és átirat, és az ügynök a kapu hibáiból tanul a következő körben (2, 3, 5).
+
+6. Architecture: gráf és egyetlen ciklus, a külvilág a services mögött, semmi meglepetés (1, 3).
+
+7. Types: Zod séma a node-ok közt, Choice és Score a Jev-ből, ami nem fér a sémába, a parse-nál bukik (2, 6).
+
+8. Plans: a gráf maga a terv, a döntés és a korlát benne van, nem a promptban (1, 5).
+
+9. Documentation: a kb/ az ügynök dokumentációja, azon kívül nem tud semmit, és ez szándékos (4).
+
+10. Templates: prompt fájlok és sablonválasz kódból, a sablonkérdésre el sem indul ügynök (4, 6).
+
+11. Tests: a Checker a zárt hurok, és azt is tartja, amit az ügynök nem tudhat (3, 5).
+
+12. ADWs: a trigger, a környezet és a review kódban: hook, lock, gate, autoSend (8).
+-->
 
 ---
 
@@ -951,22 +998,18 @@ A mai hat levélnél: 7 hívás, 2 javítási kör, 2 emberi döntés, 0 elakad�
 
 ---
 
-# A tizenkét leverage point a lépésekre vetítve
-
-<img src="/tac-leverage.png" alt="12 leverage point" class="mx-auto rounded" style="max-height: 430px" />
-
----
-
 # El kell mondani
 
 <div class="grid grid-cols-2 gap-8">
 <div>
 
 **Cél: dark factory**
+
 - út: *in-the-loop* (1–6) ≫ *near-the-loop* (7) ≫ *out-of-the-loop* (8)
 - út: lépésről lépésre, egyszerre egy koncepció
 
 **Cél: én üzemeltetem**
+
 - út: az erőforrások legalább fele az *agentic layer*-re megy
 - a kapu, a korlát, a triage: ez a réteg
 
@@ -974,10 +1017,12 @@ A mai hat levélnél: 7 hívás, 2 javítási kör, 2 emberi döntés, 0 elakad�
 <div>
 
 **Cél: mindent értek**
+
 - út: *magyarázd* – `done[]`, `problems[]`, riport, átirat
 - út: *úgy csináld, ahogy én tenném* – a `kb/` és a prompt fájl
 
 **Cél: szállító független**
+
 - út: kis feladatok – egy node, egy prompt, egy cél
 - út: több agent – `Agent` interface: `claude`, `replay`, bármi
 - út: független futtatás – `hook.ts`, lock, resume
@@ -1003,3 +1048,7 @@ class: text-center
 `adw-tutorial` · 8 branch · minden futás visszajátszható
 
 <div class="text-sm opacity-70 pt-4">just demo 1 … just demo 8 · just slides</div>
+
+<!--
+prettier-ignore-end
+-->
