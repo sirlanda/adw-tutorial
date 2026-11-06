@@ -191,9 +191,9 @@ sync:
     done
     git checkout -q "$cur"
     for b in $(git branch --list --format '%(refname:short)' '0?-*'); do
-      [ -z "$(git diff "main..$b" --stat -- justfile slides)" ] || { echo "eltér: $b"; exit 1; }
+      [ -z "$(git diff "main..$b" --stat -- justfile slides .prettierignore .markdownlint-cli2.yaml)" ] || { echo "eltér: $b"; exit 1; }
     done
-    echo "ok: justfile és slides/ minden ágon azonos"
+    echo "ok: justfile, slides/ és a formázó-védelem minden ágon azonos"
 
 # Függőségek: engine és diák
 install:
