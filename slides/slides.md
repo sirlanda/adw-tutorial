@@ -704,7 +704,7 @@ state.status = "running";
 bun adw.ts T-1006
 #  vége: status=waiting next=gate   → outbox/T-1006.md
 
-bun adw.ts T-1006 --reject "Kérj szállítási címet és céges adószámot"
+bun adw.ts T-1006 --reject "Kérdezd meg, hogy jogosult-e ÁFA visszatérítésre!"
 #  gate → fix → check → gate → propose → waiting  (iteration 1)
 
 bun adw.ts T-1006 --approve
