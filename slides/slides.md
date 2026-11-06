@@ -952,6 +952,10 @@ layout: section
 
 `08-off-the-loop` · a kapu dönt, a poller küld
 
+<!--
+És akkor most szálljunk ki agyártásból...
+-->
+
 ---
 
 # A kapu első ága kódban
@@ -1027,6 +1031,64 @@ for (const ticket of fresh)
 </div>
 </div>
 
+<!--
+CLICK
+
+Engedjük meg, hogy bizonyos jól meghatározott, alacsony kockázatú lépések automatikusan megtörténjenek.
+
+A Jev triage megbízhatósági szintjét is használva meghatározzuk, hogy mi mehet ki anélkül, hogy meg kellene nézni.
+
+Az így elkészített rendszer egy önálló gépen állandó szolgáltatásként tud futni. És az érdeklődők 1-2 percen belül választ kapnak a tudástár alapján a kérdéseikre.
+
+A bonyolultabb eseteket, pedig a reggeli kávé közben tudja intézni a beérkező munkaerő.
+-->
+
+---
+
+# Ki ül a gép előtt: in, near, off the loop
+
+<div class="grid grid-cols-2 gap-6 text-xs">
+<div>
+
+<img src="/loop-curve.svg" class="w-full" alt="termelékenység az autonómia függvényében: harmadfokú görbe lokális maximummal" />
+
+</div>
+<div>
+
+<v-clicks>
+
+| | Ki indít | Ki dönt | Az ember |
+| --- | --- | --- | --- |
+| **In the loop** (01–06) | az ember, levelenként | az ember, lépésenként | ott ül, vár, olvas |
+| **Near the loop** (07) | a poller | a kapu megáll, az ember jóváhagy | akkor jön, ha kész a javaslat |
+| **Off the loop** (08) | a poller | a kapu első ága kódban | csak a riasztást kezeli |
+
+</v-clicks>
+
+<div v-click class="pt-4">
+
+- **20–50%**: az ügynök gyors, az ember a szűk keresztmetszet
+- **10×**: a döntés elő van készítve, egy kattintás
+- **∞**: a kód dönt, az ember kiesik a kritikus útból
+
+</div>
+
+</div>
+</div>
+
+<!--
+A három mód nem három stílus, hanem három pont ugyanazon a görbén.
+
+In the loop: minden lépést az ember indít és olvas, ezért a termelékenység az ember figyelméhez van kötve, 20–50%-nál nem több.
+
+Near the loop: a lokális maximum. A workflow kidolgozza, megáll, az ember csak jóváhagy. Egy ember így sok futást visz, 10×.
+
+A völgy: több autonómiát adunk, de a kapu még az embernél van, az ügynök sokat csinál, az ember utólag ellenőriz. Ez drágább, mint jóváhagyni.
+
+Off the loop: a kapu kódban dönt, az ember csak a riasztásokat kapja. A termelékenység nem az ember idejétől függ, ezért a görbe a végtelenhez tart.
+
+A görbe harmadfokú: a lokális maximum csapda, ha itt megállunk, sosem jutunk át a völgyön.
+-->
 ---
 
 # Miért nem elég egy skill?
@@ -1069,7 +1131,7 @@ sok mindenre jó, de ő fogja. Az ADW egy gyár: a folyamat, a kapu, a számlál
 
 A skill az ügynök eszköze, az ADW az üzemeltetőé. A skill az ADW-ben egy node promptja.
 
-Mindent meg lehet csinálni `skill` segítségével is (kérdezd McGywer-t), de nem hatékony és nem konzisztens.
+Mindent meg lehet csinálni `skill` segítségével is (kérdezd McGyver-t), de nem hatékony és nem konzisztens.
 
 Ikonok: game-icons.net, Lorc és Delapouite, CC BY 3.0.
 -->
@@ -1081,6 +1143,10 @@ layout: section
 # Tactical Agentic Coding
 
 4 KPI, 12 leverage point
+
+<!--
+Röviden összefoglalom, hogy mik azok a mérési pontok és segédeszközök, ami megmutatja és növelheti a termelékenységünket.
+-->
 
 ---
 
@@ -1221,7 +1287,16 @@ class: text-center
 
 `adw-tutorial` · 8 branch · minden futás visszajátszható
 
-<div class="text-sm opacity-70 pt-4">just demo 1 … just demo 8 · just slides</div>
+<div class="text-sm opacity-70 pt-2">just demo 1 … just demo 8 · just slides</div>
+
+<div class="text-left text-sm pt-8 mx-auto w-max">
+
+- Ez a projekt: <a href="https://github.com/sirlanda/adw-tutorial" target="_blank">github.com/sirlanda/adw-tutorial</a>
+- A módszer, IndyDevDan: <a href="https://www.youtube.com/@indydevdan" target="_blank">youtube.com/@indydevdan</a>
+- Jev, a triage eszköze: <a href="https://typesafe.ai" target="_blank">typesafe.ai</a>
+- Ingyenes ügynökök: <a href="https://opencode.ai" target="_blank">opencode.ai</a> · <a href="https://pi.dev" target="_blank">pi.dev</a>
+
+</div>
 
 <!--
 prettier-ignore-end
