@@ -893,4 +893,4 @@ class: text-center
 
 `adw-tutorial` · 8 branch · minden futás visszajátszható
 
-<div class="text-sm opacity-70 pt-4">bun adw.ts T-1002 · bun hook.ts --once</div>
+<div class="text-sm opacity-70 pt-4">just demo 1 … just demo 8 · just slides</div>

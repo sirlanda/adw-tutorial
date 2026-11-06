@@ -177,6 +177,24 @@ snippets:
 
 # ---------- karbantartás ----------
 
+# A justfile vagy a slides/ módosítása után: a 01..08 láncot sorban az előzőre rebase-eli (main-ről indulva)
+sync:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    [ -z "$(git status --porcelain)" ] || { echo "előbb commit vagy just clean, a fa nem tiszta"; exit 1; }
+    cur=$(git branch --show-current)
+    prev=main
+    for b in $(git branch --list --format '%(refname:short)' '0?-*' | sort); do
+      git rebase -q "$prev" "$b" >/dev/null
+      echo "$b <- $prev ($(git log --oneline "$prev..$b" | wc -l) commit)"
+      prev=$b
+    done
+    git checkout -q "$cur"
+    for b in $(git branch --list --format '%(refname:short)' '0?-*'); do
+      [ -z "$(git diff "main..$b" --stat -- justfile slides)" ] || { echo "eltér: $b"; exit 1; }
+    done
+    echo "ok: justfile és slides/ minden ágon azonos"
+
 # Függőségek: engine és diák
 install:
     bun install
