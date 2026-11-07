@@ -1294,7 +1294,9 @@ class: text-center
 - Ez a projekt: <a href="https://github.com/sirlanda/adw-tutorial" target="_blank">github.com/sirlanda/adw-tutorial</a>
 - A módszer, IndyDevDan: <a href="https://www.youtube.com/@indydevdan" target="_blank">youtube.com/@indydevdan</a>
 - Jev, a triage eszköze: <a href="https://typesafe.ai" target="_blank">typesafe.ai</a>
-- Ingyenes ügynökök: <a href="https://opencode.ai" target="_blank">opencode.ai</a> · <a href="https://pi.dev" target="_blank">pi.dev</a>
+- Ügynökök: <a href="https://opencode.ai" target="_blank">opencode.ai</a> · <a href="https://pi.dev" target="_blank">pi.dev</a> · <a href="https://github.com/can1357/oh-my-pi" target="_blank">omp (oh-my-pi)</a> · <a href="https://claude.com/claude-code" target="_blank">claude</a> · <a href="https://github.com/openai/codex" target="_blank">codex</a>
+- Terminál multiplexer: <a href="https://github.com/herdrdev/herdr" target="_blank">herdr</a>
+- Prezentáció: <a href="https://sli.dev" target="_blank">slidev</a>
 
 </div>
 
